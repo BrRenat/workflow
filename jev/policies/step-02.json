@@ -1,0 +1,119 @@
+{
+  "version": "01-02-pilot-3",
+  "scope": [
+    "01",
+    "02"
+  ],
+  "mode": "shadow",
+  "execution_enabled": false,
+  "purpose": "Declarative interpretation of actual answers and independently checked facts; no controller is deployed by this file.",
+  "threshold_source": "Use active calibrated intake/ownership thresholds. Uncalibrated example values permit only shadow observations.",
+  "required_positive": [
+    "expected_behavior_clear",
+    "acceptance_unambiguous",
+    "acceptance_verifiable",
+    "acceptance_consistent",
+    "implementation_context_sufficient",
+    "ownership_evidence_sufficient"
+  ],
+  "required_negative": [
+    "scope_conflict",
+    "product_decision_needed",
+    "human_decision_required"
+  ],
+  "bug_only_positive": [
+    "actual_behavior_specific",
+    "repro_actionable"
+  ],
+  "domain_policy_checks": {
+    "security_boundary_change": "Security/authorization owner policy",
+    "destructive_data_change": "Data owner and recovery policy",
+    "public_contract_change": "Public contract/compatibility owner policy",
+    "money_logic_change": "Financial behavior owner policy",
+    "rollout_coordination_needed": "Release/coordination owner policy"
+  },
+  "work_area_interpretation": {
+    "question_to_area": {
+      "frontend_work_required": "frontend",
+      "backend_work_required": "backend",
+      "mobile_work_required": "mobile",
+      "devops_work_required": "devops",
+      "data_work_required": "data",
+      "platform_configuration_required": "platform_configuration",
+      "content_operations_required": "content_operations",
+      "shared_contract_work_required": "shared_contract"
+    },
+    "classification": "Evaluate each answer independently using the active calibrated Noul thresholds. Retain all supported areas; never choose a single winner or normalize probabilities across areas.",
+    "output": "Collect supported areas in work_areas; retain uncertain or missing areas separately with their raw answers and probabilities. An empty list is not proof that no work is required.",
+    "boundary": "Work areas describe scope, not assigned people, repository mappings, readiness or permission. Multiple areas, platform configuration and content operations do not automatically require human intervention. Keep ownership_evidence_sufficient and actual component mappings as separate checks."
+  },
+  "rules": [
+    {
+      "when": "A required source cannot be read",
+      "outcome": "blocked_access",
+      "action": "Report the exact access gap; preserve evidence and stop live submission."
+    },
+    {
+      "when": "An urgent incident or security event is established",
+      "outcome": "human_attention",
+      "action": "Use incident escalation immediately; collect missing facts alongside escalation."
+    },
+    {
+      "when": "Jev response is missing or invalid",
+      "outcome": "blocked_jev",
+      "action": "Do not manufacture answers or probabilities."
+    },
+    {
+      "when": "Original AC are absent, a required readiness predicate fails or is uncertain, or requirements conflict",
+      "outcome": "human_attention",
+      "reason": "NEEDS_CLARIFICATION",
+      "action": "Identify exact unresolved requirements and their owner; do not create replacement AC."
+    },
+    {
+      "when": "QA Round / QA-return comments enumerate remaining failures or checklist items",
+      "outcome": "use_comment_remaining_scope",
+      "action": "Treat those bullets as authoritative remaining acceptance scope (cite comment id/author/date). Do not HOLD with 'AC unconfirmed' solely because description AC is thin. Ask the product owner only for true gaps (which Round items still open, Spec vs Round conflict, backend contract readiness). WFJev replies must include a Comments/QA history subsection citing the latest Round/return or 'none found'."
+    },
+    {
+      "when": "A specific human-owned choice remains unresolved",
+      "outcome": "human_attention",
+      "action": "Ask the responsible owner that specific question, then refresh via 01 before 02."
+    },
+    {
+      "when": "A risk predicate is positive or uncertain",
+      "outcome": "check_domain_policy",
+      "action": "Use existing authorization if it covers the exact scope. Ask only for a specifically required missing approval; risk alone is not a human gate."
+    },
+    {
+      "when": "A blocking dependency is unfinished",
+      "outcome": "wait_dependency",
+      "action": "Record dependency and wake-up event; no generic approval request."
+    },
+    {
+      "when": "Suitable worker capacity is temporarily unavailable",
+      "outcome": "wait_capacity",
+      "action": "Wait; do not downgrade to an unsuitable worker."
+    },
+    {
+      "when": "Runtime/capability mapping or action permission cannot be established",
+      "outcome": "human_attention",
+      "action": "Report precise missing setup or authority. Model recommendation does not supply either."
+    },
+    {
+      "when": "model_choice is insufficient_context",
+      "outcome": "human_attention",
+      "action": "Identify task context needed for a recommendation."
+    },
+    {
+      "when": "model_choice is none",
+      "outcome": "inspect_reason",
+      "action": "Distinguish explicit availability constraints from tasks outside preferences. Missing model cards are not lack of capability."
+    },
+    {
+      "when": "All applicable semantic and factual gates pass",
+      "outcome": "eligible_recommendation",
+      "action": "Record recommendation only. This pilot does not authorize promotion, dispatch or launch."
+    }
+  ],
+  "combination": "Retain all reasons; hard blockers and unresolved human decisions cannot be overridden by model choice or a favorable aggregate score. Missing/uncertain required answers are not passes. Ignore bug-only predicates for non-bug work."
+}

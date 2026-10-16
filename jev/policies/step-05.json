@@ -1,0 +1,80 @@
+{
+  "version": "05-pilot-2",
+  "scope": [
+    "05"
+  ],
+  "mode": "shadow",
+  "execution_enabled": false,
+  "purpose": "Declarative review-depth interpretation; this file deploys no controller and grants no actions.",
+  "question_preset": "step-05",
+  "thresholds": {
+    "noul_yes_min": 0.8,
+    "noul_no_max": 0.2,
+    "calibrated": false,
+    "use": "Playground/shadow examples only. Production requires approved review-routing calibration for the pinned model and question version. Missing, nonnumeric, nonfinite or out-of-range scores are invalid; missing/invalid answers block interpretation. Middle-band values are uncertain, not passes."
+  },
+  "required_answers": [
+    "review_context_sufficient",
+    "business_logic_changed",
+    "behavior_verification_needed",
+    "cross_component_verification_needed",
+    "static_review_sufficient",
+    "product_decision_unresolved",
+    "specialist_decision_unresolved",
+    "human_verification_required"
+  ],
+  "preparation": [
+    "Preserve original requirements and AC, current PR/head, actual change facts, applicable human decisions and source gaps in any readable format.",
+    "Fetch per-case CI results, retain retries/skips/errors, and tie artifacts to head/pipeline/job/attempt using provider metadata. An aggregate success is not per-AC proof.",
+    "Separate absent scope from work the independent reviewer can perform. Missing review results are expected before review; do not require 06B evidence to enter 06B."
+  ],
+  "factual_gates": [
+    "Reconcile the completion candidate to the authorized session and current PR/head; Stop alone proves nothing.",
+    "Required CI pending: wait; failed: return to existing implementation session. Missing/skipped required checks need configured applicability; unknown is not passed.",
+    "Establish authoritative repository policy, reviewer access/capacity and exact action grants before live launch.",
+    "Verify provenance for test evidence relied on to justify 06A. Unbound reports can inform shadow exploration but cannot prove current-head acceptance.",
+    "Reuse qualifying current-head reviews; deduplicate requests by head, scope and policy."
+  ],
+  "route_rules": [
+    {
+      "when": "review_context_sufficient is negative or uncertain",
+      "outcome": "collect_context",
+      "action": "Identify missing scope/intent and gather authorized evidence, then refetch and repeat 05. Ask a human only for a concrete human-owned decision or access/setup obstacle."
+    },
+    {
+      "when": "The ticket already completed a 06B independent review on an earlier head, then went to QA, QA returned it (validated QA return), and it is back at 05 after the QA rework",
+      "outcome": "github_codex",
+      "action": "Operator cost rule: route 06A, not 06B. Overrides repository require_independent_review, the validated-QA-reopen trigger, positive/uncertain verification predicates and the GitHub-coverage condition. Still requires sufficient context and passing/attributable CI; still report all human-attention items. Does not apply to 06B CHANGES_REQUESTED loops before the ticket reached QA, or to a ticket whose QA return predates its first 06B."
+    },
+    {
+      "when": "Repository explicitly requires both routes",
+      "outcome": "github_codex_and_independent_verification"
+    },
+    {
+      "when": "Repository requires independent review, a validated QA reopen exists, or applicable domain policy requires deeper review",
+      "outcome": "independent_verification"
+    },
+    {
+      "when": "behavior_verification_needed or cross_component_verification_needed is positive or uncertain",
+      "outcome": "independent_verification"
+    },
+    {
+      "when": "static_review_sufficient is positive, both verification-needed predicates are negative, and repository accepts configured GitHub review coverage",
+      "outcome": "github_codex"
+    },
+    {
+      "when": "Context is sufficient but the 06A conditions are not established",
+      "outcome": "independent_verification"
+    }
+  ],
+  "business_logic_changed": "Context for configured domain policy, not a universal 06B trigger. Resolve applicable authorization/pricing/data policy before launch; unknown policy cannot justify 06A.",
+  "human_attention": {
+    "product_decision_unresolved": "Exact product/domain-owner question.",
+    "specialist_decision_unresolved": "Exact authorized specialist decision.",
+    "human_verification_required": "Exact human-only acceptance check, build and responsible role.",
+    "positive": "Locate the concrete unresolved decision/check and reuse existing scoped resolutions; no generic approval request.",
+    "uncertain": "Investigate the evidence and existing decisions first. Do not automatically escalate or treat uncertainty as a negative. If unresolved, hold dependent progress.",
+    "negative": "No semantic escalation supported by this answer; explicit required approvals remain factual gates."
+  },
+  "combination": "Apply route rules in order after valid answers. Retain all independent reasons and human items even when context or a factual gate blocks launch. A route recommendation never proves correctness or authorizes execution. Authorized review evidence collection may continue while an unrelated human decision is pending; dependent progress waits. Never downgrade review depth for missing access or quota."
+}

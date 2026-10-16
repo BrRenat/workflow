@@ -1,0 +1,70 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "WF_HOOK_RUNTIME=codex bash scripts/grok-bot-hook.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "WF_HOOK_RUNTIME=codex bash scripts/grok-bot-hook.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "WF_HOOK_RUNTIME=codex bash scripts/grok-bot-hook.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "WF_HOOK_RUNTIME=codex bash scripts/grok-bot-hook.sh",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "WF_HOOK_RUNTIME=codex bash scripts/grok-bot-hook.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "WF_HOOK_RUNTIME=codex bash scripts/grok-bot-hook.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

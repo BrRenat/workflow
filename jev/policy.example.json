@@ -1,0 +1,147 @@
+{
+  "schema_version": "3",
+  "mode": "shadow",
+  "jev": {
+    "model": "jev-1.13.0",
+    "question_version": "5",
+    "api_key_env": "TYPESAFE_API_KEY",
+    "max_attempts": 3
+  },
+  "calibration": {
+    "intake_approved": false,
+    "ownership_approved": false,
+    "model_routing_approved": false,
+    "qa_return_approved": false,
+    "completion_approved": false,
+    "review_routing_approved": false
+  },
+  "thresholds": {
+    "note": "Provisional starting points only. Calibrate independently on held-out team examples before enabling automatic actions.",
+    "intake": {
+      "noul_yes_min": 0.9,
+      "noul_no_max": 0.1,
+      "choice_confidence_min": 0.8,
+      "choice_probability_min": 0.8,
+      "choice_margin_min": 0.2
+    },
+    "qa_return": {
+      "noul_yes_min": 0.9,
+      "noul_no_max": 0.1,
+      "choice_confidence_min": 0.8,
+      "choice_probability_min": 0.8,
+      "choice_margin_min": 0.2
+    },
+    "ownership": {
+      "noul_yes_min": 0.95,
+      "choice_confidence_min": 0.9,
+      "choice_probability_min": 0.9,
+      "choice_margin_min": 0.3
+    },
+    "model_routing": {
+      "fit_noul_min": 0.9,
+      "choice_confidence_min": 0.8,
+      "choice_probability_min": 0.8,
+      "choice_margin_min": 0.2,
+      "allow_tie_break_among_supported_fits": true
+    },
+    "completion": {
+      "noul_yes_min": 0.95,
+      "noul_no_max": 0.05
+    },
+    "review_routing": {
+      "noul_yes_min": 0.95,
+      "noul_no_max": 0.05
+    }
+  },
+  "authorized_actions": {
+    "promote_to_in_progress": false,
+    "start_implementation": false,
+    "request_qa_details": false,
+    "return_to_implementation": false,
+    "reassign_issue": false,
+    "merge": false,
+    "deploy_staging": false,
+    "deploy_production": false,
+    "mark_done": false,
+    "submit_for_review": false,
+    "request_github_review": false,
+    "start_independent_review": false,
+    "enter_ready_for_staging": false,
+    "promote_to_release": false,
+    "handoff_to_qa_develop": false,
+    "handoff_to_qa_staging": false
+  },
+  "delivery": {
+    "default_target": "handoff_to_qa_develop",
+    "require_independent_review": true,
+    "require_current_artifact_evidence": true
+  },
+  "qa": {
+    "require_screenshot_with_video": true,
+    "max_failed_implementation_attempts": 2,
+    "require_written_repro_with_video": true
+  },
+  "scheduling": {
+    "unknown_quota_policy": "hold_automatic_launch",
+    "quota_max_age_seconds": 300,
+    "capacity_max_age_seconds": 60,
+    "reserve_slots_atomically": true
+  },
+  "models": {
+    "grok": {
+      "runtime_id": null,
+      "capabilities_verified": false,
+      "approved_lanes": [],
+      "evaluation_refs": [],
+      "quota_pool_id": null
+    },
+    "claude_opus": {
+      "runtime_id": null,
+      "capabilities_verified": false,
+      "approved_lanes": [],
+      "evaluation_refs": [],
+      "quota_pool_id": null
+    },
+    "claude_fable": {
+      "runtime_id": null,
+      "capabilities_verified": false,
+      "approved_lanes": [],
+      "evaluation_refs": [],
+      "quota_pool_id": null
+    },
+    "chatgpt_sol": {
+      "runtime_id": null,
+      "capabilities_verified": false,
+      "approved_lanes": [],
+      "evaluation_refs": [],
+      "quota_pool_id": null
+    },
+    "chatgpt_astra": {
+      "runtime_id": null,
+      "capabilities_verified": false,
+      "approved_lanes": [],
+      "evaluation_refs": [],
+      "quota_pool_id": null
+    }
+  },
+  "ownership": {
+    "note": "Illustrative example map; replace with the team's own tracker labels and repositories.",
+    "component_map": [
+      {
+        "source": "tracker_label",
+        "label_group": "Platforms",
+        "label": "Web",
+        "repository": "example-org/web-app",
+        "component": "Web app"
+      },
+      {
+        "source": "tracker_label",
+        "label_group": "Platforms",
+        "label": "API",
+        "repository": "example-org/api",
+        "component": "API"
+      }
+    ]
+  },
+  "workflow_policy_path": "../orchestration/policy.example.json"
+}

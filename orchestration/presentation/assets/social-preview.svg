@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Workflow — From ticket to verified release</title>
+  <desc id="desc">Versioned delivery rules using Grok Bot, Superset and Jev. An illustrative review finds missing evidence after green CI.</desc>
+  <rect width="1200" height="630" fill="#0E1318"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#E8943A"/>
+  <g font-family="DejaVu Sans, sans-serif">
+    <text x="64" y="91" fill="#F2A65A" font-size="19" font-weight="700" letter-spacing="3">W/ WORKFLOW</text>
+    <text x="64" y="218" fill="#E7EDF3" font-size="65" font-weight="700" letter-spacing="-3">From ticket to</text>
+    <text x="64" y="296" fill="#F2A65A" font-size="65" font-weight="700" letter-spacing="-3">verified release.</text>
+    <text x="67" y="358" fill="#B7C3CE" font-size="23">A repeatable workflow for</text>
+    <text x="67" y="392" fill="#B7C3CE" font-size="23">AI-assisted delivery.</text>
+    <text x="67" y="438" fill="#8F9FAC" font-size="15">Versioned rules + an interactive walkthrough</text>
+    <line x1="64" y1="488" x2="1136" y2="488" stroke="#2A3540"/>
+    <rect x="64" y="523" width="193" height="48" rx="8" fill="#2A1F13" stroke="#77512D"/>
+    <text x="91" y="554" fill="#F2A65A" font-size="20" font-weight="700">Grok Bot</text>
+    <rect x="273" y="523" width="193" height="48" rx="8" fill="#1D2410" stroke="#657B29"/>
+    <text x="300" y="554" fill="#BCD65E" font-size="20" font-weight="700">Superset</text>
+    <rect x="482" y="523" width="127" height="48" rx="8" fill="#13233A" stroke="#345882"/>
+    <text x="519" y="554" fill="#86B8F2" font-size="20" font-weight="700">Jev</text>
+    <text x="1136" y="553" text-anchor="end" fill="#9DABB8" font-size="15">Inspect every step.</text>
+    <rect x="768" y="144" width="368" height="309" rx="15" fill="#151E26" stroke="#34414B"/>
+    <rect x="792" y="144" width="320" height="3" fill="#86B8F2"/>
+    <text x="796" y="184" fill="#A6B6C4" font-size="12" letter-spacing="1">EXAMPLE / WEB-123</text>
+    <text x="796" y="235" fill="#75D99A" font-size="17" font-weight="700">CI checks passed</text>
+    <text x="796" y="262" fill="#9DABB8" font-size="13">Independent review follows.</text>
+    <line x1="796" y1="284" x2="1108" y2="284" stroke="#34414B"/>
+    <text x="796" y="315" fill="#E7EDF3" font-size="14">Resize scenario</text>
+    <text x="1108" y="315" text-anchor="end" fill="#F2B24B" font-size="12" font-weight="700">GAP</text>
+    <text x="796" y="351" fill="#E7EDF3" font-size="14">Unmount cleanup</text>
+    <text x="1108" y="351" text-anchor="end" fill="#F395B1" font-size="12" font-weight="700">FAIL</text>
+    <rect x="792" y="378" width="320" height="49" rx="6" fill="#23313E"/>
+    <text x="811" y="408" fill="#E7EDF3" font-size="14" font-weight="700">Return with evidence.</text>
+    <text x="1087" y="409" fill="#F2A65A" font-size="21">→</text>
+  </g>
+</svg>
