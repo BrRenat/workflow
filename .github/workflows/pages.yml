@@ -1,0 +1,63 @@
+name: Deploy presentation to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'orchestration/presentation/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Test presentation data
+        working-directory: orchestration/presentation
+        run: npm run test:data
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      # Point canonical, Open Graph and X card URLs at the deployed page.
+      - name: Configure sharing URLs
+        run: node orchestration/presentation/scripts/configure-sharing.mjs "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          rsync -a \
+            --exclude node_modules --exclude tests --exclude scripts \
+            --exclude package.json --exclude package-lock.json \
+            --exclude README.md --exclude .gitignore \
+            orchestration/presentation/ _site/
+          touch _site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
