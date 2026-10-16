@@ -1,0 +1,91 @@
+{
+  "version": "13-pilot-1",
+  "scope": [
+    "13"
+  ],
+  "mode": "shadow",
+  "execution_enabled": false,
+  "purpose": "Declarative production-release interpretation for step 13; this file deploys no controller and grants no merge, deployment or Done transition. It is stricter than step 09 on purpose.",
+  "question_preset": "step-13",
+  "thresholds": {
+    "noul_yes_min": 0.9,
+    "noul_no_max": 0.1,
+    "calibrated": false,
+    "use": "Playground/shadow examples only. Production requires approved completion calibration for the pinned model and question version. Missing, nonnumeric, nonfinite or out-of-range scores are invalid; missing/invalid answers block interpretation. The bands are narrower than step 09: everything between 0.1 and 0.9 is uncertain, never a pass."
+  },
+  "required_answers": [
+    "acceptance_evidence_sufficient",
+    "production_evidence_current",
+    "scope_expanded",
+    "production_manual_check_outstanding",
+    "production_coordination_needed",
+    "production_blocker_present",
+    "rollout_plan_complete",
+    "release_batch_clean",
+    "incident_or_freeze_active",
+    "risk_class_requires_human",
+    "human_production_decision_required"
+  ],
+  "preparation": [
+    "WFRelease 12 refreshes the evidence on the exact staged artifact in any readable format: original AC, per-AC acceptance evidence with its source and artifact association, independent review results and open threads, CI results, staging release result (version, health), QA Staging record with its status change or acceptance by an authorized QA identity, release batch contents and their status, rollout, migration, flag and recovery notes, incident and freeze records, release calendar, approvals and applicable release policy excerpts.",
+    "Label implementer claims separately from observed facts. Record unretrieved items as gaps; never fill them with defaults, staging results or older production results.",
+    "Do not add a release recommendation, a computed gate result or an expected answer to the state."
+  ],
+  "factual_gates": [
+    "The production candidate is the exact artifact that QA Staging accepted; the acceptance or status change was made by an authorized QA identity.",
+    "The artifact, its head and its configuration are unchanged since QA Staging. A new head returns to 05 for review; a rebuilt artifact needs provenance and renewed affected checks before 13 runs again. Neither is a wait.",
+    "Required CI passed on that head and the staging release result records the deployed version and health.",
+    "No unresolved review thread, open regression or conflicting QA report on the artifact.",
+    "The merge to the production branch is mergeable under branch protection: required approvals present, no conflicts.",
+    "No active incident, release freeze or closed production window recorded in code-readable sources, and the release batch contains no blocked change.",
+    "The `deploy_production` grant is held; when CI deploys on merge, the merge to the production branch is the production deployment. `mark_done` is held when the ticket is to move to Done after verified delivery."
+  ],
+  "required_positive": [
+    "acceptance_evidence_sufficient",
+    "production_evidence_current",
+    "rollout_plan_complete",
+    "release_batch_clean"
+  ],
+  "required_negative": [
+    "scope_expanded",
+    "production_manual_check_outstanding",
+    "production_coordination_needed",
+    "production_blocker_present",
+    "incident_or_freeze_active",
+    "risk_class_requires_human",
+    "human_production_decision_required"
+  ],
+  "outcomes": [
+    {
+      "when": "Any factual gate fails or its evidence is missing",
+      "outcome": "wait",
+      "action": "Stay in Ready for Release under WFRelease 12; record the exact blocker, owner and wake-up event. Do not call Jev to compensate for a factual gap."
+    },
+    {
+      "when": "Any required answer is missing or invalid",
+      "outcome": "blocked_jev",
+      "action": "Retain the ticket in Ready for Release; do not substitute an expected answer."
+    },
+    {
+      "when": "risk_class_requires_human or human_production_decision_required is positive or uncertain",
+      "outcome": "human_decision",
+      "action": "Ask the named production release owner for the exact decision; the answer returns through WFRelease 12 and 13 re-runs. A model score never replaces that decision."
+    },
+    {
+      "when": "incident_or_freeze_active is positive or uncertain",
+      "outcome": "wait",
+      "action": "Hold under WFRelease 12 with the incident close, freeze end or window opening as wake-up; confirm the record with the incident or release owner when it is uncertain."
+    },
+    {
+      "when": "Any other required predicate fails or is uncertain",
+      "outcome": "wait",
+      "action": "Record the failing predicates as blockers with the missing evidence as wake-up. A predicate that stays uncertain after WFRelease refreshed the evidence goes to the production release owner instead of a second wait."
+    },
+    {
+      "when": "All factual gates pass, every required predicate passes and the `deploy_production` grant is held",
+      "outcome": "automatic_release",
+      "action": "Run step 14: merge to the production branch (the production deployment when CI deploys on merge), verify the delivered version and health, then move the ticket to Done under the `mark_done` grant. This is eligibility, not an executed merge."
+    }
+  ],
+  "combination": "Apply factual gates before reading answers. Each required predicate is judged on its own inside the 0.9/0.1 bands; no weighted average or product across answers. Stricter than step 09: four positive predicates instead of one, seven negative predicates instead of five, narrower bands, and a positive or uncertain human-class, human-decision or incident answer routes to the production release owner or an incident wait instead of a plain wait. Retain every blocker and human item even when one sets the outcome. A recommendation never proves correctness or authorizes execution; the example policy is shadow with `deploy_production` and `mark_done` disabled, so every outcome is recorded as a recommendation."
+}

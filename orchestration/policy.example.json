@@ -1,0 +1,161 @@
+{
+  "schema_version": "3",
+  "mode": "shadow",
+  "decision_policy_path": "../jev/policy.example.json",
+  "statuses": {
+    "todo": {
+      "name": "Todo",
+      "tracker_state_id": null
+    },
+    "in_progress": {
+      "name": "In Progress",
+      "tracker_state_id": null
+    },
+    "code_review": {
+      "name": "Code Review",
+      "tracker_state_id": null
+    },
+    "qa_develop": {
+      "name": "QA Develop",
+      "tracker_state_id": null
+    },
+    "ready_for_staging": {
+      "name": "Ready for Staging",
+      "tracker_state_id": null
+    },
+    "qa_staging": {
+      "name": "QA Staging",
+      "tracker_state_id": null
+    },
+    "ready_for_release": {
+      "name": "Ready for Release",
+      "tracker_state_id": null
+    }
+  },
+  "tracker_team_id": null,
+  "post_release_state_id": null,
+  "review": {
+    "policy_version": "2",
+    "github_coverage_accepted": false,
+    "codex_reviewer_identity": null,
+    "github_review_enabled_verified": false,
+    "require_both_routes": false,
+    "force_independent_after_validated_qa_return": true,
+    "max_rounds_per_implementation_cycle": 3,
+    "result_timeout_seconds": 3600,
+    "require_passed_ci_before_review": true,
+    "require_semantic_test_strength_for_independent_verification": true,
+    "question_preset": "step-05",
+    "interpretation_policy": "../jev/policies/step-05.json"
+  },
+  "verification": {
+    "required_implementation_checks": null,
+    "required_pr_checks": null,
+    "required_approval_policy": null
+  },
+  "staging": {
+    "merge_is_staging_deploy": true,
+    "question_preset": "step-09",
+    "interpretation_policy": "../jev/policies/step-09.json",
+    "environment_id": null,
+    "pipeline_id": null,
+    "artifact_resolver": null,
+    "merge_required": null,
+    "required_smoke_checks": null,
+    "recovery_policy_ref": null,
+    "require_qa_develop": true,
+    "release_window_policy_ref": null,
+    "approval_policy_ref": null
+  },
+  "qa": {
+    "require_current_artifact_acceptance": true,
+    "develop": {
+      "handoff_destination": null,
+      "pass_signal": "status_change_to_ready_for_staging",
+      "assignee_identity": null,
+      "stand_comment_marker": null,
+      "stand_comment_timeout_seconds": 1800,
+      "authorized_qa_identities": [],
+      "allowed_automated_acceptance_suites": []
+    },
+    "staging": {
+      "handoff_destination": null,
+      "authorized_qa_identities": [],
+      "allowed_automated_acceptance_suites": []
+    }
+  },
+  "release": {
+    "environment_id": null,
+    "pipeline_id": null,
+    "artifact_resolver": null,
+    "merge_required": null,
+    "required_health_checks": null,
+    "release_window_policy_ref": null,
+    "approval_policy_ref": null,
+    "recovery_policy_ref": null,
+    "require_staging_qa": true,
+    "require_release_batch_gate": true,
+    "merge_is_production_deploy": true,
+    "question_preset": "step-13",
+    "interpretation_policy": "../jev/policies/step-13.json",
+    "human_reserved_change_classes": null,
+    "incident_source_ref": null
+  },
+  "scheduler": {
+    "per_issue_lease": true,
+    "per_release_environment_artifact_lock": true,
+    "persist_action_intent": true,
+    "reconcile_unknown_before_retry": true,
+    "max_worker_launch_attempts": 3,
+    "max_transient_api_attempts": 3
+  },
+  "worker_signals": {
+    "delegate_tracker_transitions": false,
+    "delegable_transitions": [
+      "todo->in_progress",
+      "in_progress->code_review",
+      "code_review->in_progress"
+    ],
+    "agent_tracker_identity": null,
+    "require_distinct_agent_identity": true,
+    "idle_nudge_seconds": 900,
+    "max_nudges_before_attention": 2,
+    "max_discrepancies_before_undelegating": 3,
+    "discrepancy_window_days": 14
+  },
+  "attention_roles": {
+    "product": null,
+    "qa": null,
+    "design": null,
+    "security": null,
+    "data": null,
+    "platform": null,
+    "technical": null,
+    "release": null,
+    "repo_tools": null,
+    "incident": null
+  },
+  "workflow": {
+    "diagram_path": "assets/workflow.svg",
+    "diagram_changes_require_explicit_user_request": true,
+    "coding_steps": [
+      "04"
+    ],
+    "ci_failure_returns_to_step": "04",
+    "review_pass_next_step": "07",
+    "qa_develop_pass_next_step": "08",
+    "staging_decision_step": "09",
+    "staging_automatic_next_step": "10",
+    "staging_wait_next_step": "08",
+    "release_decision_step": "13",
+    "release_automatic_next_step": "14",
+    "release_wait_next_step": "12",
+    "human_responses_via_wftasks": true,
+    "coding_execution_unit": "single_agent_session"
+  },
+  "develop": {
+    "environment_id": null,
+    "artifact_resolver": null,
+    "build_readiness_source": null
+  }
+}

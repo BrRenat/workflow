@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="600" viewBox="0 0 1280 600" role="img" aria-labelledby="title desc">
+  <title id="title">Workflow — from ticket to verified release</title>
+  <desc id="desc">An agentic delivery workflow: Jev decision gates at steps 02, 05, 09, 13 and 15, one live coding session, independent review, and humans who own acceptance criteria, QA and release decisions.</desc>
+  <defs>
+    <clipPath id="frame"><rect width="1280" height="600" rx="28"/></clipPath>
+    <radialGradient id="glow-orange" cx="0.12" cy="0.05" r="0.75">
+      <stop offset="0" stop-color="#E8943A" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#E8943A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-blue" cx="0.85" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#86B8F2" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#86B8F2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title-fill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#C9D5E0"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#E7EDF3" fill-opacity="0.06"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#4A5966"/>
+    </marker>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="600" fill="#0E1318"/>
+    <rect width="1280" height="600" fill="url(#dots)"/>
+    <rect width="1280" height="600" fill="url(#glow-orange)"/>
+    <rect width="1280" height="600" fill="url(#glow-blue)"/>
+    <rect width="1280" height="6" fill="#E8943A"/>
+
+    <g font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'DejaVu Sans', sans-serif">
+      <text x="64" y="88" fill="#F2A65A" font-size="18" font-weight="700" letter-spacing="4">W/  AGENTIC DELIVERY WORKFLOW</text>
+      <text x="58" y="230" fill="url(#title-fill)" font-size="144" font-weight="800" letter-spacing="-6">Workflow</text>
+      <text x="64" y="296" fill="#E7EDF3" font-size="38" font-weight="700" letter-spacing="-1">From ticket to <tspan fill="#F2A65A">verified release.</tspan></text>
+      <text x="65" y="342" fill="#B7C3CE" font-size="20">Jev decision gates, one live coding session, independent review.</text>
+      <text x="65" y="372" fill="#B7C3CE" font-size="20">Humans own the acceptance criteria, QA and release decisions.</text>
+    </g>
+
+    <!-- Illustrative Jev question card: real question IDs and types from jev/questions/step-02.json -->
+    <g font-family="'JetBrains Mono', SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace">
+      <rect x="812" y="64" width="404" height="318" rx="16" fill="#151E26" stroke="#34414B"/>
+      <rect x="836" y="64" width="356" height="3" fill="#86B8F2"/>
+      <text x="836" y="102" fill="#86B8F2" font-size="13" font-weight="700" letter-spacing="1.5">JEV · STEP-02 PRESET</text>
+      <text x="1192" y="102" text-anchor="end" fill="#6F808E" font-size="12">27 questions</text>
+      <line x1="836" y1="120" x2="1192" y2="120" stroke="#2A3540"/>
+      <text x="836" y="152" fill="#E7EDF3" font-size="14">acceptance_verifiable</text>
+      <text x="1192" y="152" text-anchor="end" fill="#75D99A" font-size="12" font-weight="700">noul</text>
+      <text x="836" y="184" fill="#E7EDF3" font-size="14">acceptance_unambiguous</text>
+      <text x="1192" y="184" text-anchor="end" fill="#75D99A" font-size="12" font-weight="700">noul</text>
+      <text x="836" y="216" fill="#E7EDF3" font-size="14">scope_conflict</text>
+      <text x="1192" y="216" text-anchor="end" fill="#75D99A" font-size="12" font-weight="700">noul</text>
+      <text x="836" y="248" fill="#E7EDF3" font-size="14">task_complexity</text>
+      <text x="1192" y="248" text-anchor="end" fill="#BCD65E" font-size="12" font-weight="700">choice</text>
+      <text x="836" y="280" fill="#E7EDF3" font-size="14">model_choice</text>
+      <text x="1192" y="280" text-anchor="end" fill="#BCD65E" font-size="12" font-weight="700">choice</text>
+      <line x1="836" y1="302" x2="1192" y2="302" stroke="#2A3540"/>
+      <rect x="836" y="322" width="104" height="30" rx="15" fill="#13261B" stroke="#2F6B45"/>
+      <text x="888" y="342" text-anchor="middle" fill="#75D99A" font-size="12" font-weight="700">autopromote</text>
+      <rect x="948" y="322" width="132" height="30" rx="15" fill="#2A2112" stroke="#7A5A22"/>
+      <text x="1014" y="342" text-anchor="middle" fill="#F2B24B" font-size="12" font-weight="700">human_attention</text>
+      <rect x="1088" y="322" width="104" height="30" rx="15" fill="#13233A" stroke="#345882"/>
+      <text x="1140" y="342" text-anchor="middle" fill="#86B8F2" font-size="12" font-weight="700">wait_*</text>
+    </g>
+
+    <!-- Phase strip: step ranges from orchestration/PIPELINE.md; Jev decides at 02, 05, 09 and 13 -->
+    <line x1="64" y1="432" x2="1216" y2="432" stroke="#2A3540"/>
+    <g font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'DejaVu Sans', sans-serif">
+      <rect x="64" y="460" width="172" height="76" rx="12" fill="#151E26" stroke="#34414B"/>
+      <text x="80" y="488" fill="#8F9FAC" font-size="13" font-weight="700" letter-spacing="1">01–02</text>
+      <text x="220" y="488" text-anchor="end" fill="#86B8F2" font-size="12" font-weight="700">◆ Jev 02</text>
+      <text x="80" y="516" fill="#E7EDF3" font-size="16" font-weight="700">Readiness</text>
+
+      <rect x="260" y="460" width="172" height="76" rx="12" fill="#151E26" stroke="#34414B"/>
+      <text x="276" y="488" fill="#8F9FAC" font-size="13" font-weight="700" letter-spacing="1">03–04</text>
+      <text x="276" y="516" fill="#E7EDF3" font-size="16" font-weight="700">Implementation</text>
+
+      <rect x="456" y="460" width="172" height="76" rx="12" fill="#151E26" stroke="#34414B"/>
+      <text x="472" y="488" fill="#8F9FAC" font-size="13" font-weight="700" letter-spacing="1">05–06</text>
+      <text x="612" y="488" text-anchor="end" fill="#86B8F2" font-size="12" font-weight="700">◆ Jev 05</text>
+      <text x="472" y="516" fill="#E7EDF3" font-size="16" font-weight="700">Review</text>
+
+      <rect x="652" y="460" width="172" height="76" rx="12" fill="#151E26" stroke="#34414B"/>
+      <text x="668" y="488" fill="#8F9FAC" font-size="13" font-weight="700" letter-spacing="1">07</text>
+      <text x="668" y="516" fill="#E7EDF3" font-size="16" font-weight="700">QA Develop</text>
+
+      <rect x="848" y="460" width="172" height="76" rx="12" fill="#151E26" stroke="#34414B"/>
+      <text x="864" y="488" fill="#8F9FAC" font-size="13" font-weight="700" letter-spacing="1">08–11</text>
+      <text x="1004" y="488" text-anchor="end" fill="#86B8F2" font-size="12" font-weight="700">◆ Jev 09</text>
+      <text x="864" y="516" fill="#E7EDF3" font-size="16" font-weight="700">Staging</text>
+
+      <rect x="1044" y="460" width="172" height="76" rx="12" fill="#1C1A14" stroke="#77512D"/>
+      <text x="1060" y="488" fill="#8F9FAC" font-size="13" font-weight="700" letter-spacing="1">12–14</text>
+      <text x="1200" y="488" text-anchor="end" fill="#86B8F2" font-size="12" font-weight="700">◆ Jev 13</text>
+      <text x="1060" y="516" fill="#F2A65A" font-size="16" font-weight="700">Release</text>
+
+      <text x="64" y="572" fill="#6F808E" font-size="14">15–17: QA returns are validated before any rework.</text>
+      <text x="1216" y="572" text-anchor="end" fill="#6F808E" font-size="14">Ships in shadow mode. Autonomy follows your grants.</text>
+    </g>
+    <g stroke="#4A5966" stroke-width="2" marker-end="url(#arrow)">
+      <line x1="238" y1="498" x2="256" y2="498"/>
+      <line x1="434" y1="498" x2="452" y2="498"/>
+      <line x1="630" y1="498" x2="648" y2="498"/>
+      <line x1="826" y1="498" x2="844" y2="498"/>
+      <line x1="1022" y1="498" x2="1040" y2="498"/>
+    </g>
+  </g>
+</svg>

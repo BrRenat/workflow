@@ -1,0 +1,12 @@
+Backlog	<backlog-state-id>	backlog
+Todo	<todo-state-id>	unstarted
+In Progress	<in-progress-state-id>	started
+Code Review	<code-review-state-id>	started
+QA Develop	<qa-develop-state-id>	started
+QA Staging	<qa-staging-state-id>	started
+Ready for Staging	<ready-for-staging-state-id>	started
+Ready for Release	<ready-for-release-state-id>	started
+Blocked	<blocked-state-id>	started
+Done	<done-state-id>	completed
+Canceled	<canceled-state-id>	canceled
+Duplicate	<duplicate-state-id>	duplicate

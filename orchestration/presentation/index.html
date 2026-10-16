@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workflow — From ticket to verified release</title>
+  <meta name="description" content="Versioned rules for AI-assisted delivery with Grok Bot, Superset and Jev. Explore task readiness, coding, independent review, QA and release gates.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workflow">
+  <meta property="og:title" content="From ticket to verified release">
+  <meta property="og:description" content="Grok Bot orchestrates. Superset runs the agents. Jev evaluates readiness and routing. Explore the workflow and the rules behind it.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/BrRenat/workflow/master/orchestration/presentation/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Workflow: from ticket to verified release. Grok Bot, Superset and Jev. Versioned rules and an interactive walkthrough.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="From ticket to verified release">
+  <meta name="twitter:description" content="A reusable workflow for AI-assisted delivery. Explore the decisions, independent review and rules behind each step.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/BrRenat/workflow/master/orchestration/presentation/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="Workflow: from ticket to verified release. Grok Bot, Superset and Jev.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-mode="explore" data-view="diagram">
+  <a class="skip" href="#workflow">Skip to workflow</a>
+
+  <div class="landing">
+  <header class="landing-nav" id="top">
+    <a class="wordmark" href="#top" aria-label="Workflow home"><span class="wordmark-icon" aria-hidden="true">W/</span> Workflow</a>
+    <nav aria-label="Main navigation">
+      <a href="#workflow">Explore</a>
+      <a href="#setup">Set up</a>
+      <a href="https://github.com/BrRenat/workflow">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Rules for AI-assisted delivery</p>
+      <h1 id="hero-title">From ticket to<br><span>verified release.</span></h1>
+      <p class="hero-lead">Give your coding agents a repeatable workflow.</p>
+      <p class="hero-description">Task readiness, coding, independent review, QA and release gates — defined in versioned rules you can inspect and adapt.</p>
+      <div class="hero-actions">
+        <a class="btn hero-primary" href="#walkthrough-1">Start walkthrough <span aria-hidden="true">→</span></a>
+        <a class="btn hero-secondary" href="#workflow">Explore workflow</a>
+        <a class="hero-setup" href="#setup">Set up <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="hero-note">Interactive example · no account or API key needed to explore</p>
+    </div>
+
+    <aside class="demo-preview" aria-labelledby="demo-preview-title">
+      <svg class="flow-sprite" aria-hidden="true" focusable="false">
+        <symbol id="fi-doc" viewBox="0 0 14 14"><rect x="3" y="1.8" width="8" height="10.4" rx="1.6"/><path d="M5.3 5h3.4M5.3 7.3h3.4M5.3 9.6h2"/></symbol>
+        <symbol id="fi-code" viewBox="0 0 14 14"><path d="M5 4 2 7l3 3M9 4l3 3-3 3"/></symbol>
+        <symbol id="fi-search" viewBox="0 0 14 14"><circle cx="6" cy="6" r="3.6"/><path d="m8.7 8.7 3.3 3.3"/></symbol>
+        <symbol id="fi-person" viewBox="0 0 14 14"><circle cx="7" cy="4.6" r="2.3"/><path d="M2.8 12.2c.6-2.4 2.3-3.7 4.2-3.7s3.6 1.3 4.2 3.7"/></symbol>
+        <symbol id="fi-ship" viewBox="0 0 14 14"><path d="M7 12V2.5M3.4 6.1 7 2.5l3.6 3.6"/></symbol>
+      </svg>
+      <div class="demo-preview-top"><span class="example-label">Example walkthrough</span><span class="demo-ticket">WEB-123</span></div>
+      <h2 id="demo-preview-title">One ticket, start to finish.</h2>
+      <div class="flow" id="demo-flow">
+        <svg class="flow-wires" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="flow-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8943A"/><stop offset=".5" stop-color="#5A9BE6"/><stop offset="1" stop-color="#4CC47A"/></linearGradient></defs>
+          <path class="flow-rail"/><path class="flow-fill"/>
+          <path class="flow-branch k-human" data-wire="human"/><path class="flow-branch k-findings" data-wire="rework"/>
+        </svg>
+        <ol class="flow-nodes" aria-label="Simplified flow">
+          <li class="flow-node k-grok" data-node="tasks"><span class="flow-icon"><svg aria-hidden="true"><use href="#fi-doc"/></svg><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-label"><strong>WFTasks</strong> prepares the context</span></li>
+          <li class="flow-node k-jev flow-gate" data-node="jev1"><span class="flow-icon"><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-label"><strong>Jev</strong> checks the ticket</span></li>
+          <li class="flow-node k-agent" data-node="coder"><span class="flow-icon"><svg aria-hidden="true"><use href="#fi-code"/></svg><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-label"><strong>WFCoder</strong> implements it</span></li>
+          <li class="flow-node k-jev flow-gate" data-node="jev2"><span class="flow-icon"><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-label"><strong>Jev</strong> picks the review</span></li>
+          <li class="flow-node k-review" data-node="review"><span class="flow-icon"><svg aria-hidden="true"><use href="#fi-search"/></svg><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-label"><strong>Review</strong> checks code and tests</span></li>
+          <li class="flow-node k-human" data-node="qa"><span class="flow-icon"><svg aria-hidden="true"><use href="#fi-person"/></svg><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-label"><strong>QA</strong> tests the build</span></li>
+          <li class="flow-node k-jev flow-gate" data-node="jev3"><span class="flow-icon"><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-label"><strong>Jev</strong> decides to ship</span></li>
+          <li class="flow-node k-release" data-node="release"><span class="flow-icon"><svg aria-hidden="true"><use href="#fi-ship"/></svg><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-label"><strong>WFRelease</strong> ships it</span></li>
+        </ol>
+        <div class="flow-side k-human" data-node="human"><span class="flow-icon"><svg aria-hidden="true"><use href="#fi-person"/></svg><span class="flow-mark" aria-hidden="true"></span></span><span class="flow-side-label">Human</span></div>
+        <span class="flow-token" aria-hidden="true"></span>
+      </div>
+      <div class="flow-bar" style="display: none;">
+        <span class="flow-count" aria-hidden="true">01 / 10</span>
+        <span class="flow-progress" aria-hidden="true"></span>
+        <button type="button" class="flow-btn" data-flow="prev" aria-label="Previous step">‹</button>
+        <button type="button" class="flow-btn" data-flow="play" aria-label="Pause animation">❚❚</button>
+        <button type="button" class="flow-btn" data-flow="next" aria-label="Next step">›</button>
+      </div>
+      <ol class="flow-captions" aria-label="What happens to the ticket">
+        <li class="is-active" data-ms="2000" data-at="tasks">WFTasks picks up the ticket and prepares the context: description, acceptance criteria, comments and history.</li>
+        <li data-at="human" data-ms="1000" data-via="jev1" data-wire="ask" data-mark="jev1:?">Jev checks the ticket against the rules. One criterion is unclear, so it asks a human instead of guessing.</li>
+        <li data-at="jev1" data-ms="1000" data-wire="answer" data-mark="jev1:✓">The ticket owner clarifies it. Jev checks again: the ticket is ready.</li>
+        <li data-at="coder" data-ms="2000" data-mark="coder:✓">WFCoder starts a coding agent in Superset. It implements the ticket until CI is green.</li>
+        <li data-at="jev2" data-ms="1000" data-mark="jev2:✓">Jev decides how deep the review goes: a Codex review, an independent verification, or both.</li>
+        <li data-at="review" data-ms="2000" data-mark="review:!">An independent reviewer checks the code and whether the tests really prove it. It finds a gap.</li>
+        <li data-at="review" data-ms="2000" data-via="rework coder" data-wire="rework" data-mark="review:✓">The findings go back to WFCoder. It fixes the gap, and the review passes.</li>
+        <li data-at="qa" data-ms="1500" data-mark="qa:✓">A QA engineer tests the reviewed build and passes it.</li>
+        <li data-at="jev3" data-ms="1000" data-mark="jev3:✓">Jev checks it is safe to ship: QA passed, checks are green and nothing is blocking.</li>
+        <li data-at="release" data-ms="1500" data-mark="release:✓" data-ms="3000">WFRelease ships it to staging, then to production after one more QA pass and Jev check. Done.</li>
+      </ol>
+      <p class="sr-only" aria-live="polite" data-flow="live"></p>
+      <div class="demo-foot"><p>Simplified and illustrative, not a live run.</p><a href="#walkthrough-1">Step through it <span aria-hidden="true">→</span></a></div>
+    </aside>
+  </section>
+
+  <section class="stack-strip" aria-label="How the tools work together">
+    <div class="stack-role stack-grok"><span class="stack-index">01 / ORCHESTRATE</span><h2><a href="https://x.ai/bot">Grok Bot <span aria-hidden="true">↗</span></a></h2><p>Collects evidence, coordinates steps and handles results.</p></div>
+    <div class="stack-role stack-superset"><span class="stack-index">02 / EXECUTE</span><h2><a href="https://superset.sh/">Superset <span aria-hidden="true">↗</span></a></h2><p>Runs coding agents in separate workspaces.</p></div>
+    <div class="stack-role stack-jev"><span class="stack-index">03 / DECIDE</span><h2><a href="https://typesafe.ai/">Jev <span aria-hidden="true">↗</span></a></h2><p>Evaluates readiness and routing; the controller applies policy.</p></div>
+  </section>
+  </div>
+
+  <section id="workflow" class="workflow-section" aria-labelledby="workflow-heading" tabindex="-1">
+
+  <header class="top">
+    <div class="brand">
+      <p class="eyebrow">The interactive explorer</p>
+      <h2 id="workflow-heading">Follow the work. Inspect the rules.</h2>
+    </div>
+    <div class="brand-sub">
+      <p class="sub">Jev decides readiness. Workers implement. Independent reviewers challenge both the code and its tests.</p>
+      <div id="what-how-proof" class="whp-row" aria-label="WHAT, HOW, PROOF"></div>
+    </div>
+    <div class="top-controls">
+      <div class="seg modes" role="group" aria-label="Mode">
+        <button type="button" class="seg-btn" data-mode="explore" aria-pressed="true">Explore</button>
+        <button type="button" class="seg-btn" data-mode="present" aria-pressed="false">Present</button>
+        <button type="button" class="seg-btn" data-mode="walk" aria-pressed="false">Walkthrough</button>
+      </div>
+      <button type="button" class="btn btn-trace" data-open="ac:AC-3">Trace AC</button>
+      <div class="search-wrap">
+        <label class="sr-only" for="search">Search the workflow</label>
+        <input id="search" type="search" autocomplete="off" spellcheck="false"
+               placeholder="Search: mutation, Jev, auto merge…"
+               role="combobox" aria-autocomplete="list" aria-controls="search-results" aria-expanded="false">
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+        <ul id="search-results" role="listbox" aria-label="Search results" hidden></ul>
+      </div>
+      <button type="button" id="theme-btn" class="icon-btn" aria-pressed="false" aria-label="Dark theme">
+        <span aria-hidden="true">◐</span> <span class="theme-label">Light</span>
+      </button>
+      <button type="button" id="help-btn" class="icon-btn" aria-label="Keyboard shortcuts">?</button>
+    </div>
+  </header>
+
+  <nav class="toolbar" aria-label="Diagram emphasis">
+    <div class="tb-group">
+      <span class="row-label">Focus</span>
+      <div id="filters" class="chip-row" role="group" aria-label="Filter by participant"></div>
+    </div>
+    <div class="tb-group">
+      <span class="row-label">Show</span>
+      <div id="toggles" class="chip-row" role="group" aria-label="Overlays"></div>
+    </div>
+  </nav>
+  <div id="agent-row" class="agent-row chip-row" hidden></div>
+  <div id="legend" class="legend" role="group" aria-label="Legend: hover or focus to highlight"></div>
+
+  <main class="stage-area">
+    <div class="canvas-wrap">
+      <svg id="diagram" class="diagram" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="canvas-ctl" role="group" aria-label="Zoom">
+        <button type="button" id="zoom-in" class="icon-btn" aria-label="Zoom in">+</button>
+        <button type="button" id="zoom-out" class="icon-btn" aria-label="Zoom out">−</button>
+        <button type="button" id="zoom-fit" class="icon-btn" aria-label="Fit whole workflow to screen">Fit</button>
+        <button type="button" id="zoom-reset" class="icon-btn" aria-label="Reset view to the top, full width">Reset</button>
+        <span id="zoom-level" class="zoom-level" aria-live="off">100%</span>
+        <span class="seg view-seg" role="group" aria-label="View">
+          <button type="button" class="seg-btn" data-view="diagram" aria-pressed="true">Diagram</button>
+          <button type="button" class="seg-btn" data-view="list" aria-pressed="false">List</button>
+        </span>
+      </div>
+      <p class="canvas-hint">Click and drag to pan · Ctrl/⌘ + scroll to zoom · Double-click to focus · Click anything</p>
+      <section id="caption" class="caption" hidden aria-live="polite" aria-label="Presentation step"></section>
+    </div>
+    <section id="list-view" class="list-view" aria-label="Workflow as a list"></section>
+    <aside id="drawer" class="drawer" aria-hidden="true" aria-labelledby="drawer-title">
+      <header class="drawer-head">
+        <button type="button" id="drawer-back" class="icon-btn" aria-label="Back" hidden>←</button>
+        <div class="drawer-titles">
+          <p id="drawer-kicker" class="drawer-kicker"></p>
+          <h2 id="drawer-title" class="drawer-title"></h2>
+        </div>
+        <button type="button" id="drawer-focus" class="btn" title="Zoom the diagram to this (F)">Focus</button>
+        <button type="button" id="drawer-close" class="icon-btn" aria-label="Close details">✕</button>
+      </header>
+      <div id="drawer-body" class="drawer-body"></div>
+    </aside>
+  </main>
+
+  <section id="explorers" class="explorers" aria-labelledby="explorers-h">
+    <div class="ex-head">
+      <h2 id="explorers-h">Rules, evidence and decisions</h2>
+      <p class="provenance-key">
+        <span class="prov-tag tag-diagram">Approved diagram</span> verbatim from the approved SVG ·
+        <span class="prov-tag tag-rule">Actual rule</span> verbatim quote from a repository file ·
+        <span class="prov-tag tag-doc">Documentation explanation</span> UI summary ·
+        <span class="prov-tag tag-example">Illustrative example</span> made-up web widget ticket
+      </p>
+    </div>
+    <div id="explorer-tabs" class="tabs" role="tablist" aria-label="Explorers"></div>
+    <div id="explorer-panels"></div>
+  </section>
+
+  </section>
+
+  <section id="setup" class="setup-section" aria-labelledby="setup-heading" tabindex="-1">
+    <div class="setup-heading">
+      <div><p class="eyebrow">Make it your workflow</p><h2 id="setup-heading">Scaffold it. Verify it. Let it run.</h2></div>
+      <p>Install the full orchestration in Grok Bot, then verify each step or let the workflow run on its own when you are ready.</p>
+    </div>
+    <div class="setup-options">
+      <article class="setup-option">
+        <span class="setup-option-label">01 / INSTALL</span>
+        <h3>Scaffold the fleet in Grok Bot</h3>
+        <p>Bring an existing Grok Bot controller, Superset, a coding agent, tracker and GitHub access, and a TypeSafe API key.</p>
+        <pre class="setup-message"><code>Scaffold workflow, create required bots and assign roles.</code></pre>
+        <ol class="setup-steps">
+          <li><strong>Scaffold the bots.</strong> In the Grok Bot general chat, define <code>github.com/BrRenat/workflow</code> as the workflow source, then send the message above. Grok Bot creates WFTasks, WFJev, WFReview, WFCoder and WFRelease and assigns their roles. Only WFJev calls Jev.</li>
+          <li><strong>Map your environment.</strong> Configure tracker states, repositories, model IDs, reviewers, QA and CI in local policy copies.</li>
+          <li><strong>Prepare worker sessions.</strong> Install the coding and verification skills and the status hooks in each target project.</li>
+          <li><strong>Run a shadow pilot.</strong> Inspect decisions for one task while every action stays disabled.</li>
+        </ol>
+        <p class="setup-note">The controller runtime is external. This repository supplies skills, policies and helper scripts.</p>
+      </article>
+      <article class="setup-option">
+        <span class="setup-option-label">02 / RUN</span>
+        <h3>Choose how it runs</h3>
+        <p>Both modes start from a passing shadow pilot and change only your local policy copies.</p>
+        <div class="setup-modes">
+          <section class="setup-mode" aria-labelledby="mode-step-title">
+            <h4 id="mode-step-title">Step by step</h4>
+            <p>Enable one step at a time. Check each decision, action and result against its evidence before granting the next.</p>
+          </section>
+          <section class="setup-mode" aria-labelledby="mode-auto-title">
+            <h4 id="mode-auto-title">Full autonomy <span>when ready</span></h4>
+            <p>Grant every calibrated step. The workflow runs from intake to verified release; people act only where it names them:</p>
+            <ul>
+              <li>Ticket owner, when acceptance criteria are unclear</li>
+              <li>QA on the reviewed and the staged build</li>
+              <li>Release owner, for reserved risks or named decisions</li>
+              <li>Named owners, for missing QA details or review decisions</li>
+            </ul>
+          </section>
+        </div>
+        <p class="setup-note">Every gate still applies, and a score is never a permission. Example policies keep every action disabled.</p>
+      </article>
+    </div>
+    <div class="setup-footer"><p>Detailed setup, runtime paths, hooks and a first-run checklist are in the guide.</p><a class="btn" href="https://github.com/BrRenat/workflow/blob/master/SETUP.md">Read setup guide <span aria-hidden="true">↗</span></a><a href="#top">Back to top ↑</a></div>
+  </section>
+
+  <footer class="page-foot">
+    <p>Stage topology: <code>orchestration/assets/workflow.svg</code> (approved diagram, unchanged) · process text: <code>orchestration/PIPELINE.md</code>.
+      ticket AC remain the sole source of truth for product acceptance. The example policies are in shadow mode with every action grant disabled; this page enables nothing.</p>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+  <dialog id="source-dialog" class="source-dialog" aria-labelledby="source-path">
+    <header class="src-head">
+      <button type="button" id="source-back" class="btn btn-primary">← Back to workflow</button>
+      <div>
+        <p class="src-kicker">Read-only source</p>
+        <h2 id="source-path" class="src-path"></h2>
+        <p id="source-section" class="src-section"></p>
+      </div>
+    </header>
+    <div class="src-main">
+      <nav id="source-toc" class="src-toc" aria-label="Sections"></nav>
+      <div id="source-body" class="src-body"></div>
+    </div>
+  </dialog>
+
+  <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-h">
+    <h2 id="help-h">Keyboard and gestures</h2>
+    <dl class="keys">
+      <dt><kbd>→</kbd> <kbd>←</kbd></dt><dd>Next / previous step (Present, Walkthrough, AC trace)</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Presentation overview, then exit · close details</dd>
+      <dt><kbd>Tab</kbd> <kbd>Enter</kbd></dt><dd>Move between stages · open details</dd>
+      <dt><kbd>/</kbd></dt><dd>Search</dd>
+      <dt><kbd>+</kbd> <kbd>−</kbd> <kbd>0</kbd></dt><dd>Zoom in / out / fit</dd>
+      <dt><kbd>F</kbd></dt><dd>Focus the diagram on the current selection</dd>
+      <dt>Mouse drag</dt><dd>Pan the diagram; touch and plain scrolling move the page</dd>
+      <dt>Ctrl/⌘ + scroll</dt><dd>Zoom the diagram (or the zoom buttons)</dd>
+    </dl>
+    <p class="meta-muted">Shortcuts are ignored while a text field is focused.</p>
+    <button type="button" id="help-close" class="btn btn-primary">Close</button>
+  </dialog>
+
+  <!-- Data (content) is separate from rendering. See README.md. -->
+  <script src="data/workflow.js"></script>
+  <script src="data/rules.js"></script>
+  <script src="data/content.js"></script>
+  <script src="data/example.js"></script>
+  <script src="data/sources.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/evaluators.js"></script>
+  <script src="js/diagram.js"></script>
+  <script src="js/panels.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/landing.js"></script>
+</body>
+</html>

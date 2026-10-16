@@ -1,0 +1,553 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5200" height="7280" viewBox="0 0 5200 7280" role="img" aria-labelledby="title desc">
+<title id="title">Task workflow: new ticket to verified release</title>
+<desc id="desc">Free-form workflow map with physical runtime boundaries, one coding-session CI loop, independent semantic test-strength review, Jev decisions through WFJev, human gates and QA returns. Grok bot fleet: WFTasks, WFJev, WFReview, WFCoder, WFRelease.</desc>
+<rect width="5200" height="7280" fill="#FAFAF7"/>
+<text x="100.00" y="65.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" fill="#D87713">WORKFLOW  /  TASK ORCHESTRATION</text>
+<text x="100.00" y="124.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="88" font-weight="700" fill="#192B3B">From ticket to verified release</text>
+<text x="100.00" y="246.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="400" fill="#52616E">Jev decides readiness. Workers implement. Independent reviewers challenge both the code and its tests.</text>
+<rect x="100" y="322" width="28" height="28" rx="6" fill="#FFF0DE" stroke="#D87713" stroke-width="2"/>
+<text x="144.00" y="319.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#192B3B">Grok bots</text>
+<rect x="350.2265625" y="322" width="28" height="28" rx="6" fill="#E8F2FF" stroke="#2369B0" stroke-width="2"/>
+<text x="394.23" y="319.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#192B3B">Jev decisions</text>
+<rect x="649.65625" y="322" width="28" height="28" rx="6" fill="#F0F7CE" stroke="#6B8110" stroke-width="2"/>
+<text x="693.66" y="319.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#192B3B">Coding / review agents</text>
+<rect x="1101.0" y="322" width="28" height="28" rx="6" fill="#EDF1F3" stroke="#596E7E" stroke-width="2"/>
+<text x="1145.00" y="319.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#192B3B">CI / release runners</text>
+<rect x="1501.375" y="322" width="28" height="28" rx="6" fill="#FFF0F1" stroke="#B34265" stroke-width="2"/>
+<text x="1545.38" y="319.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#192B3B">Human / QA</text>
+<polyline points="3340,334 3470,334" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="3490.00" y="319.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#52616E">Dashed: physical app / machine boundary</text>
+<rect x="100" y="387" width="5020" height="65" rx="14" fill="#FFF0DE" stroke="#E5BC8C" stroke-width="2"/>
+<text x="128.00" y="407.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" fill="#192B3B">SUPERSET HANDOFF: ticket ID + operational notes + execution instructions only. Never the title or copied ticket content.</text>
+<polygon points="80,500 2250,500 2250,1970 1210,1970 1210,1140 80,1140" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="80,500 2250,500 2250,1970 1210,1970 1210,1140 80,1140 80,500" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="120.00" y="530.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">GROK BOT APP · WFTasks + WFJev + WFCoder</text>
+<rect x="160" y="625" width="900" height="435" rx="20" fill="#FFF0DE" stroke="#D87713" stroke-width="2"/>
+<rect x="182" y="648" width="51" height="43" rx="10" fill="#D87713" stroke="#D87713" stroke-width="1"/>
+<text x="192.89" y="659.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">01</text>
+<text x="248.00" y="649.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">New ticket + source checks</text>
+<rect x="186" y="703" width="125.390625" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="200.00" y="709.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">WFTasks</text>
+<text x="967.76" y="709.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">TODO</text>
+<text x="187.00" y="743.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Ready</text>
+<text x="285.00" y="743.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">A new tracker issue ID is available.</text>
+<text x="187.00" y="791.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Scope</text>
+<text x="285.00" y="791.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Read description, existing ticket AC, relations and</text>
+<text x="285.00" y="825.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">QA history.</text>
+<text x="187.00" y="873.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Tools</text>
+<text x="285.00" y="873.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Tracker integration; ticket text and image inspection.</text>
+<text x="187.00" y="921.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Pass</text>
+<text x="285.00" y="921.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Intent and evidence understood. Missing source</text>
+<text x="285.00" y="955.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">access stops work.</text>
+<rect x="1290" y="820" width="900" height="450" rx="20" fill="#E8F2FF" stroke="#2369B0" stroke-width="2"/>
+<rect x="1312" y="843" width="51" height="43" rx="10" fill="#2369B0" stroke="#2369B0" stroke-width="1"/>
+<text x="1322.89" y="854.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">02</text>
+<text x="1378.00" y="844.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">AC readiness + task routing</text>
+<rect x="1316" y="898" width="225.8175" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="1330.00" y="904.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">WFJev + WFTasks</text>
+<text x="1317.00" y="938.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Ready</text>
+<text x="1415.00" y="938.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Ticket description and explicit AC are loaded.</text>
+<text x="1317.00" y="986.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Scope</text>
+<text x="1415.00" y="986.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">AC present, clear, testable, consistent; enough</text>
+<text x="1415.00" y="1020.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">context.</text>
+<text x="1317.00" y="1068.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Tools</text>
+<text x="1415.00" y="1068.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Jev checks + source facts. Never infer or create AC.</text>
+<text x="1317.00" y="1116.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Pass</text>
+<text x="1415.00" y="1116.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">All AC gates pass; owner, model, capacity and</text>
+<text x="1415.00" y="1150.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">permission ready.</text>
+<rect x="1290" y="1480" width="900" height="435" rx="20" fill="#FFF0DE" stroke="#D87713" stroke-width="2"/>
+<rect x="1312" y="1503" width="51" height="43" rx="10" fill="#D87713" stroke="#D87713" stroke-width="1"/>
+<text x="1322.89" y="1514.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">03</text>
+<text x="1378.00" y="1504.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Launch the coding workflow</text>
+<rect x="1316" y="1558" width="257.9375" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="1330.00" y="1564.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">WFTasks → WFCoder</text>
+<text x="1317.00" y="1598.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Ready</text>
+<text x="1415.00" y="1598.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Task approved for work; capacity reserved.</text>
+<text x="1317.00" y="1646.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Scope</text>
+<text x="1415.00" y="1646.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Start or resume one Superset session.</text>
+<text x="1317.00" y="1694.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Tools</text>
+<text x="1415.00" y="1694.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Ticket ID, operational notes and execution</text>
+<text x="1415.00" y="1728.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">instructions only.</text>
+<text x="1317.00" y="1776.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Pass</text>
+<text x="1415.00" y="1776.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Session confirmed. Task name uses the issue ID; no</text>
+<text x="1415.00" y="1810.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">ticket title.</text>
+<polygon points="1740,1320.0 1805.0,1380 1740,1440.0 1675.0,1380" fill="#192B3B" stroke="#192B3B" stroke-width="2"/>
+<text x="1705.75" y="1367.50" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Start?</text>
+<rect x="1795.125" y="1424" width="69.75" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1807.12" y="1430.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#287743">Yes</text>
+<rect x="160" y="1360" width="900" height="260" rx="20" fill="#FFF0F1" stroke="#B34265" stroke-width="2"/>
+<text x="188.00" y="1383.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" fill="#B34265">HUMAN · ticket / product owner</text>
+<text x="188.00" y="1437.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">Update the ticket and return it to WFTasks (01). WFTasks</text>
+<text x="188.00" y="1474.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">rereads the current ticket, then asks Jev (02). Never guess</text>
+<text x="188.00" y="1511.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">missing AC.</text>
+<rect x="1221.18359375" y="1334" width="317.6328125" height="41" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1233.18" y="1340.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#B34265">NEEDS_CLARIFICATION</text>
+<rect x="624.68359375" y="1204" width="424.320312" height="41" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="636.68" y="1210.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#B34265">Updated ticket → WFTasks (01)</text>
+<text x="180.00" y="1730.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#52616E">Dependencies / capacity pending? Wait for the event; no</text>
+<text x="180.00" y="1769.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#52616E">unnecessary human approval.</text>
+<text x="1280.00" y="2015.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" fill="#52616E">Models: Grok · Claude Opus · Claude Fable · ChatGPT Sol · ChatGPT Astra</text>
+<circle cx="2240" cy="2150" r="25" fill="#FFFFFF" stroke="#B34265" stroke-width="3"/>
+<text x="2230.76" y="2137.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">R</text>
+<rect x="1812.609375" y="2186" width="394.78125" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1824.61" y="2192.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">Authorized redispatch → 03</text>
+<rect x="2299.51171875" y="1124" width="120.9765625" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="2311.51" y="1130.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#52616E">Launch</text>
+<rect x="2440" y="500" width="2680" height="1240" rx="27" fill="#F2F6EE" stroke="#7B8B70" stroke-width="3"/>
+<text x="2480.00" y="524.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="700" fill="#192B3B">AGENT IMPLEMENTATION SESSION · 04</text>
+<polygon points="2490,600 4230,600 4230,1290 2490,1290" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="2490,600 4230,600 4230,1290 2490,1290 2490,600" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="2520.00" y="624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">IMPLEMENTATION MACHINE · Superset</text>
+<text x="2520.00" y="667.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" fill="#52616E">Coding agent owns planning, implementation and the CI correction loop.</text>
+<polygon points="4310,750 5070,750 5070,1090 4310,1090" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="4310,750 5070,750 5070,1090 4310,1090 4310,750" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="4340.00" y="777.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">CI SERVICE</text>
+<text x="4340.00" y="820.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" fill="#52616E">External runner, when configured</text>
+<text x="4340.00" y="855.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#52616E">Static, unit, integration, mutation, browser and</text>
+<text x="4340.00" y="892.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#52616E">visual checks as applicable.</text>
+<text x="4340.00" y="970.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#192B3B">Mutation: can tests detect implementation</text>
+<text x="4340.00" y="1007.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#192B3B">changes?</text>
+<text x="2560.00" y="1660.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" fill="#52616E">CI access / infrastructure blocked → pause. A lost session needs controller recovery.</text>
+<polygon points="4050,2490 5120,2490 5120,3140 4050,3140" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="4050,2490 5120,2490 5120,3140 4050,3140 4050,2490" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="4080.00" y="2517.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">GROK BOT APP · same app</text>
+<text x="4080.00" y="2560.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" fill="#52616E">WFJev + WFTasks; WFReview owns 06A / 06B</text>
+<rect x="4140" y="2610" width="900" height="466" rx="20" fill="#E8F2FF" stroke="#2369B0" stroke-width="2"/>
+<rect x="4162" y="2633" width="51" height="43" rx="10" fill="#2369B0" stroke="#2369B0" stroke-width="1"/>
+<text x="4172.89" y="2644.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">05</text>
+<text x="4228.00" y="2634.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Choose review depth</text>
+<rect x="4166" y="2688" width="225.8175" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="4180.00" y="2694.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">WFJev + WFTasks</text>
+<text x="4855.38" y="2694.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">CODE REVIEW</text>
+<text x="4167.00" y="2728.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Ready</text>
+<text x="4265.00" y="2728.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Completion reconciled; required CI passes.</text>
+<text x="4265.00" y="2762.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Current PR and acceptance evidence are available.</text>
+<text x="4167.00" y="2810.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Scope</text>
+<text x="4265.00" y="2810.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Choose a bounded review or deeper behavior</text>
+<text x="4265.00" y="2844.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">verification.</text>
+<text x="4167.00" y="2892.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Tools</text>
+<text x="4265.00" y="2892.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Assess business logic, integrations, risk and QA</text>
+<text x="4265.00" y="2926.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">reopens.</text>
+<text x="4167.00" y="2974.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Pass</text>
+<text x="4265.00" y="2974.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">External review route selected; required human</text>
+<text x="4265.00" y="3008.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">decisions identified.</text>
+<polygon points="2630,2430 3740,2430 3740,2890 2630,2890" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="2630,2430 3740,2430 3740,2890 2630,2890 2630,2430" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="2660.00" y="2457.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">GITHUB · independent review</text>
+<rect x="2690" y="2510" width="990" height="345" rx="20" fill="#F0F7CE" stroke="#6B8110" stroke-width="2"/>
+<rect x="2712" y="2533" width="51" height="43" rx="10" fill="#6B8110" stroke="#6B8110" stroke-width="1"/>
+<text x="2714.77" y="2544.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">06A</text>
+<text x="2778.00" y="2534.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">GitHub review</text>
+<rect x="2716" y="2588" width="427.8225" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="2730.00" y="2594.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#6B8110">WFReview → external Codex review</text>
+<text x="2717.00" y="2628.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Ready</text>
+<text x="2815.00" y="2628.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Bounded change; configured review coverage is sufficient.</text>
+<text x="2717.00" y="2676.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Scope</text>
+<text x="2815.00" y="2676.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Inspect the current change independently.</text>
+<text x="2717.00" y="2724.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Tools</text>
+<text x="2815.00" y="2724.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Externally requested @codex review.</text>
+<text x="2717.00" y="2772.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Pass</text>
+<text x="2815.00" y="2772.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Current-head result; no blocking findings.</text>
+<polygon points="2030,3050 3760,3050 3760,4020 2030,4020" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="2030,3050 3760,3050 3760,4020 2030,4020 2030,3050" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="2060.00" y="3077.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">REVIEW MACHINE · separate Superset session</text>
+<text x="2060.00" y="3120.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" fill="#52616E">Externally started; never the implementation session or its child reviewer.</text>
+<rect x="2090" y="3170" width="1610" height="540" rx="20" fill="#F0F7CE" stroke="#6B8110" stroke-width="2"/>
+<rect x="2112" y="3193" width="51" height="43" rx="10" fill="#6B8110" stroke="#6B8110" stroke-width="1"/>
+<text x="2114.89" y="3204.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">06B</text>
+<text x="2178.00" y="3194.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Behavior + semantic test-strength review</text>
+<rect x="2116" y="3248" width="525.0625" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="2130.00" y="3254.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#6B8110">WFReview → independent verification agent</text>
+<text x="3515.38" y="3254.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#6B8110">CODE REVIEW</text>
+<text x="2117.00" y="3288.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Ready</text>
+<text x="2215.00" y="3288.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" fill="#192B3B">Current ticket AC, Verification Plan, candidate head and actual test results.</text>
+<text x="2117.00" y="3336.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Scope</text>
+<text x="2215.00" y="3336.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" fill="#192B3B">Check AC ↔ scenarios ↔ tests ↔ code. Verify that each test would detect a meaningful violation of</text>
+<text x="2215.00" y="3370.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" fill="#192B3B">its AC.</text>
+<text x="2117.00" y="3418.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Tools</text>
+<text x="2215.00" y="3418.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" fill="#192B3B">Independent counterexample search; test-strength analysis; targeted mutation where useful.</text>
+<text x="2117.00" y="3466.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Pass</text>
+<text x="2215.00" y="3466.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" fill="#192B3B">Per-AC VERIFIED, FAILED or UNVERIFIED, with test-strength evidence, counterexamples and explicit</text>
+<text x="2215.00" y="3500.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" fill="#192B3B">gaps.</text>
+<rect x="2090" y="3760" width="1610" height="210" rx="20" fill="#FFFFFF" stroke="#BAC9AE" stroke-width="2"/>
+<text x="2118.00" y="3783.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">Would these tests fail if the implementation violated the actual AC?</text>
+<text x="2118.00" y="3839.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#52616E">expect(component).toBeDefined() does not prove container-based layout. Try a container → viewport substitution:</text>
+<text x="2118.00" y="3876.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#52616E">would the test fail? Record which meaningful AC violation each test detects.</text>
+<rect x="780" y="2860" width="1040" height="450" rx="20" fill="#FFF0F1" stroke="#B34265" stroke-width="2"/>
+<rect x="802" y="2883" width="51" height="43" rx="10" fill="#B34265" stroke="#B34265" stroke-width="1"/>
+<text x="812.89" y="2894.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">07</text>
+<text x="868.00" y="2884.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">QA Develop</text>
+<rect x="806" y="2938" width="308.96875" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="820.00" y="2944.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#B34265">QA owner / allowed suite</text>
+<text x="1649.47" y="2944.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#B34265">QA DEVELOP</text>
+<text x="807.00" y="2978.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Ready</text>
+<text x="905.00" y="2978.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Reviewed build is available in develop.</text>
+<text x="807.00" y="3026.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Scope</text>
+<text x="905.00" y="3026.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Validate the accepted feature or bug fix.</text>
+<text x="807.00" y="3074.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Tools</text>
+<text x="905.00" y="3074.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Acceptance scenarios, regression checks and screenshots.</text>
+<text x="807.00" y="3122.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Pass</text>
+<text x="905.00" y="3122.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Explicit QA pass tied to this build and the requirements.</text>
+<polygon points="3890,2767.0 3955.0,2827 3890,2887.0 3825.0,2827" fill="#192B3B" stroke="#192B3B" stroke-width="2"/>
+<text x="3849.55" y="2802.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Review</text>
+<text x="3857.00" y="2827.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">depth</text>
+<rect x="3801.89453125" y="2634" width="116.2109375" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="3813.89" y="2640.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#52616E">Simple</text>
+<rect x="3849.109375" y="3284" width="121.78125" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="3861.11" y="3290.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#52616E">Deeper</text>
+<rect x="2093.203125" y="2636" width="463.59375" height="41" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="2105.20" y="2642.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#287743">Review passed → QA Develop (07)</text>
+<rect x="1778.12109375" y="3504" width="283.7578125" height="41" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1790.12" y="3510.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#287743">Review passed → 07</text>
+<rect x="4140" y="3320" width="900" height="235" rx="20" fill="#FFF0F1" stroke="#B34265" stroke-width="2"/>
+<text x="4168.00" y="3343.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" fill="#B34265">HUMAN · product / security / design</text>
+<text x="4168.00" y="3397.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">Resolve the named decision. Return the update to WFTasks</text>
+<text x="4168.00" y="3434.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">(05), which refreshes context before review resumes.</text>
+<circle cx="3890" cy="3770" r="25" fill="#FFFFFF" stroke="#B34265" stroke-width="3"/>
+<text x="3880.76" y="3757.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">R</text>
+<rect x="4020.54296875" y="3804" width="378.9140625" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="4032.54" y="3810.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">Findings → controller → 03</text>
+<text x="4150.00" y="3630.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" fill="#52616E">Session checks challenge code changes. 06B challenges</text>
+<text x="4150.00" y="3672.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" fill="#52616E">violations of the real acceptance criteria.</text>
+<rect x="422.30859375" y="3424" width="355.3828125" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="434.31" y="3430.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#287743">QA Develop passed → 08</text>
+<polygon points="100,3560 1260,3560 1260,4280 100,4280" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="100,3560 1260,3560 1260,4280 100,4280 100,3560" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="130.00" y="3587.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">GROK BOT APP · same app</text>
+<text x="130.00" y="3630.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" fill="#52616E">WFRelease holds the candidate and refreshes evidence.</text>
+<rect x="160" y="3680" width="1020" height="466" rx="20" fill="#FFF0DE" stroke="#D87713" stroke-width="2"/>
+<rect x="182" y="3703" width="51" height="43" rx="10" fill="#D87713" stroke="#D87713" stroke-width="1"/>
+<text x="192.89" y="3714.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">08</text>
+<text x="248.00" y="3704.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Hold in Ready for Staging</text>
+<rect x="186" y="3758" width="152.0625" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="200.00" y="3764.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">WFRelease</text>
+<text x="919.00" y="3764.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">READY FOR STAGING</text>
+<text x="187.00" y="3798.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Ready</text>
+<text x="285.00" y="3798.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">QA moved the ticket to Ready for Staging on the reviewed head;</text>
+<text x="285.00" y="3832.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">the stand comment matches that head.</text>
+<text x="187.00" y="3880.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Scope</text>
+<text x="285.00" y="3880.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Refresh head, CI, review, approvals and release window; hold the</text>
+<text x="285.00" y="3914.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">candidate while a blocker or human decision is pending.</text>
+<text x="187.00" y="3962.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Tools</text>
+<text x="285.00" y="3962.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">WFRelease tracks release timing, approvals and updated</text>
+<text x="285.00" y="3996.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">source evidence; no dispatch while waiting.</text>
+<text x="187.00" y="4044.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Pass</text>
+<text x="285.00" y="4044.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Evidence refreshed → 09. Wait resolved or human update →</text>
+<text x="285.00" y="4078.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">refresh and request 09 again.</text>
+<polygon points="1370,4190 2520,4190 2520,4810 1370,4810" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="1370,4190 2520,4190 2520,4810 1370,4810 1370,4190" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="1410.00" y="4220.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">GROK BOT APP · WFJev + WFRelease</text>
+<rect x="1440" y="4340" width="1000" height="435" rx="20" fill="#E8F2FF" stroke="#2369B0" stroke-width="2"/>
+<rect x="1462" y="4363" width="51" height="43" rx="10" fill="#2369B0" stroke="#2369B0" stroke-width="1"/>
+<text x="1472.89" y="4374.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">09</text>
+<text x="1528.00" y="4364.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Decide staging merge</text>
+<rect x="1466" y="4418" width="252.495" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="1480.00" y="4424.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">WFJev + WFRelease</text>
+<text x="2178.86" y="4424.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">READY FOR STAGING</text>
+<text x="1467.00" y="4458.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Ready</text>
+<text x="1565.00" y="4458.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">WFRelease refreshed evidence in 08; required checks pass.</text>
+<text x="1467.00" y="4506.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Scope</text>
+<text x="1565.00" y="4506.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Jev completion: automatic staging merge now, or wait for a</text>
+<text x="1565.00" y="4540.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">human release decision.</text>
+<text x="1467.00" y="4588.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Tools</text>
+<text x="1565.00" y="4588.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Fresh gates, branch rules, release window and the merge</text>
+<text x="1565.00" y="4622.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">grant; Jev flags scope, manual checks, coordination.</text>
+<text x="1467.00" y="4670.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Pass</text>
+<text x="1565.00" y="4670.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">All gates and the merge grant → 10. Otherwise → 08 with</text>
+<text x="1565.00" y="4704.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">reasons, owner and wake-up.</text>
+<circle cx="1650" cy="3410" r="25" fill="#FFFFFF" stroke="#B34265" stroke-width="3"/>
+<text x="1639.80" y="3397.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">Q</text>
+<rect x="1547.43359375" y="3454" width="205.1328125" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1559.43" y="3460.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">QA failed → Q</text>
+<polygon points="4070,4190 5110,4190 5110,4840 4070,4840" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="4070,4190 5110,4190 5110,4840 4070,4840 4070,4190" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="4100.00" y="4217.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">RELEASE RUNNER</text>
+<rect x="4140" y="4310" width="900" height="450" rx="20" fill="#EDF1F3" stroke="#596E7E" stroke-width="2"/>
+<rect x="4162" y="4333" width="51" height="43" rx="10" fill="#596E7E" stroke="#596E7E" stroke-width="1"/>
+<text x="4172.89" y="4344.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">10</text>
+<text x="4228.00" y="4334.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Merge + release to staging</text>
+<rect x="4166" y="4388" width="402.2825" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="4180.00" y="4394.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#596E7E">WFRelease → release automation</text>
+<text x="4807.04" y="4394.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#596E7E">STAGING RELEASE</text>
+<text x="4167.00" y="4428.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#596E7E">Ready</text>
+<text x="4265.00" y="4428.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Merge and deployment actions are authorized.</text>
+<text x="4167.00" y="4476.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#596E7E">Scope</text>
+<text x="4265.00" y="4476.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Deliver the approved candidate to staging.</text>
+<text x="4167.00" y="4524.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#596E7E">Tools</text>
+<text x="4265.00" y="4524.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Merge once; reconcile existing actions; deploy and</text>
+<text x="4265.00" y="4558.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">smoke-test.</text>
+<text x="4167.00" y="4606.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#596E7E">Pass</text>
+<text x="4265.00" y="4606.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Release succeeds; deployed version and health are</text>
+<text x="4265.00" y="4640.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">confirmed.</text>
+<rect x="2780" y="5010" width="1120" height="220" rx="20" fill="#FFF0F1" stroke="#B34265" stroke-width="2"/>
+<text x="2808.00" y="5033.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" fill="#B34265">HUMAN · release / domain owner</text>
+<text x="2808.00" y="5087.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">Resolve or approve the named release action. Return the update to</text>
+<text x="2808.00" y="5124.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">WFRelease (08); it reloads current evidence before step 09.</text>
+<rect x="4140" y="5180" width="900" height="435" rx="20" fill="#FFF0F1" stroke="#B34265" stroke-width="2"/>
+<rect x="4162" y="5203" width="51" height="43" rx="10" fill="#B34265" stroke="#B34265" stroke-width="1"/>
+<text x="4172.89" y="5214.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">11</text>
+<text x="4228.00" y="5204.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">QA Staging</text>
+<rect x="4166" y="5258" width="308.96875" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="4180.00" y="5264.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#B34265">QA owner / allowed suite</text>
+<text x="4873.58" y="5264.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#B34265">QA STAGING</text>
+<text x="4167.00" y="5298.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Ready</text>
+<text x="4265.00" y="5298.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Staging release succeeded; exact build is known.</text>
+<text x="4167.00" y="5346.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Scope</text>
+<text x="4265.00" y="5346.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Verify integrated behavior and regressions.</text>
+<text x="4167.00" y="5394.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Tools</text>
+<text x="4265.00" y="5394.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Acceptance, regression and cross-component</text>
+<text x="4265.00" y="5428.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">scenarios.</text>
+<text x="4167.00" y="5476.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Pass</text>
+<text x="4265.00" y="5476.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Explicit QA pass on the staged artifact; blocking</text>
+<text x="4265.00" y="5510.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">defects resolved.</text>
+<polygon points="1500,5420 3820,5420 3820,6080 1500,6080" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="1500,5420 3820,5420 3820,6080 1500,6080 1500,5420" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="1530.00" y="5447.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">GROK BOT APP · same app</text>
+<text x="1530.00" y="5490.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" fill="#52616E">WFRelease + WFJev</text>
+<rect x="2710" y="5540" width="1050" height="435" rx="20" fill="#FFF0DE" stroke="#D87713" stroke-width="2"/>
+<rect x="2732" y="5563" width="51" height="43" rx="10" fill="#D87713" stroke="#D87713" stroke-width="1"/>
+<text x="2742.89" y="5574.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">12</text>
+<text x="2798.00" y="5564.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Hold in Ready for Release</text>
+<rect x="2736" y="5618" width="152.0625" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="2750.00" y="5624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">WFRelease</text>
+<text x="3498.83" y="5624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">READY FOR RELEASE</text>
+<text x="2737.00" y="5658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Ready</text>
+<text x="2835.00" y="5658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">QA Staging passed on the exact staged artifact.</text>
+<text x="2737.00" y="5706.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Scope</text>
+<text x="2835.00" y="5706.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Refresh artifact, CI, QA Staging, incidents, freeze,</text>
+<text x="2835.00" y="5740.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">batch, permissions; hold while a decision is pending.</text>
+<text x="2737.00" y="5788.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Tools</text>
+<text x="2835.00" y="5788.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">WFRelease tracks release timing, approvals and evidence.</text>
+<text x="2737.00" y="5836.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Pass</text>
+<text x="2835.00" y="5836.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Evidence refreshed → 13. Human update → refresh and</text>
+<text x="2835.00" y="5870.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">request 13 again.</text>
+<polygon points="100,5230 1310,5230 1310,5880 100,5880" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="100,5230 1310,5230 1310,5880 100,5880 100,5230" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="130.00" y="5257.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">RELEASE RUNNER</text>
+<rect x="160" y="5350" width="1090" height="435" rx="20" fill="#E2F4E7" stroke="#287743" stroke-width="2"/>
+<rect x="182" y="5373" width="51" height="43" rx="10" fill="#287743" stroke="#287743" stroke-width="1"/>
+<text x="192.89" y="5384.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">14</text>
+<text x="248.00" y="5374.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Merge, release, move to Done</text>
+<rect x="186" y="5428" width="402.2825" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="200.00" y="5434.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#287743">WFRelease → release automation</text>
+<text x="1155.00" y="5434.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#287743">DONE</text>
+<text x="187.00" y="5468.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#287743">Ready</text>
+<text x="285.00" y="5468.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Production gates and the release grant pass.</text>
+<text x="187.00" y="5516.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#287743">Scope</text>
+<text x="285.00" y="5516.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Merge to the production branch; CI deploys it.</text>
+<text x="187.00" y="5564.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#287743">Tools</text>
+<text x="285.00" y="5564.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Deployment, actual version and health / smoke checks.</text>
+<text x="187.00" y="5612.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#287743">Pass</text>
+<text x="285.00" y="5612.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Verified delivery → ticket moved to Done. Failure →</text>
+<text x="285.00" y="5646.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">recovery; never claim done.</text>
+<rect x="1500" y="6140" width="1170" height="200" rx="20" fill="#FFF0F1" stroke="#B34265" stroke-width="2"/>
+<text x="1528.00" y="6163.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" fill="#B34265">HUMAN · production release owner, when required</text>
+<text x="1528.00" y="6217.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">Return the release decision to WFRelease (12). It refreshes evidence before</text>
+<text x="1528.00" y="6254.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" fill="#192B3B">WFJev re-evaluates. A model score never grants deployment permission.</text>
+<circle cx="4910" cy="5730" r="25" fill="#FFFFFF" stroke="#B34265" stroke-width="3"/>
+<text x="4899.80" y="5717.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">Q</text>
+<rect x="4607.43359375" y="5774" width="205.1328125" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="4619.43" y="5780.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">QA failed → Q</text>
+<text x="140.00" y="5960.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#52616E">Deployment failed or outcome unknown? Hold the stage, reconcile or recover, then</text>
+<text x="140.00" y="6000.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#52616E">recheck. Never advance on dispatch alone.</text>
+<text x="120.00" y="6380.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="34" font-weight="700" fill="#192B3B">QA RETURN · validate the report before another coding attempt</text>
+<polygon points="70,6450 3340,6450 3340,7000 70,7000" fill="#F8F9F6" stroke="#F8F9F6" stroke-width="3"/>
+<polyline points="70,6450 3340,6450 3340,7000 70,7000 70,6450" fill="none" stroke="#94A0A9" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<text x="100.00" y="6477.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="700" fill="#192B3B">GROK BOT APP · WFTasks + WFJev; WFCoder takes validated rework</text>
+<rect x="140" y="6540" width="1260" height="364" rx="20" fill="#E8F2FF" stroke="#2369B0" stroke-width="2"/>
+<rect x="162" y="6563" width="51" height="43" rx="10" fill="#2369B0" stroke="#2369B0" stroke-width="1"/>
+<text x="172.89" y="6574.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">15</text>
+<text x="228.00" y="6564.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Validate the QA report</text>
+<rect x="166" y="6618" width="225.8175" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="180.00" y="6624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">WFTasks + WFJev</text>
+<text x="1241.48" y="6624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">QA RETURN</text>
+<text x="167.00" y="6658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Ready</text>
+<text x="265.00" y="6658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">New QA feedback is retrieved from the tracker.</text>
+<text x="167.00" y="6706.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Scope</text>
+<text x="265.00" y="6706.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Check completeness, tested build, failure relation and ownership.</text>
+<text x="167.00" y="6754.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Tools</text>
+<text x="265.00" y="6754.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Expected / actual result, steps, environment and image evidence.</text>
+<text x="167.00" y="6802.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Pass</text>
+<text x="265.00" y="6802.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Confirmed failure or regression on the correct build. Skip videos; video reports</text>
+<text x="265.00" y="6836.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">require a screenshot + written repro.</text>
+<rect x="2070" y="6540" width="1190" height="330" rx="20" fill="#FFF0DE" stroke="#D87713" stroke-width="2"/>
+<rect x="2092" y="6563" width="51" height="43" rx="10" fill="#D87713" stroke="#D87713" stroke-width="1"/>
+<text x="2102.89" y="6574.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">16</text>
+<text x="2158.00" y="6564.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Return to implementation</text>
+<rect x="2096" y="6618" width="257.9375" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="2110.00" y="6624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">WFTasks → WFCoder</text>
+<text x="3132.98" y="6624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#D87713">REWORK</text>
+<text x="2097.00" y="6658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Ready</text>
+<text x="2195.00" y="6658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Failure confirmed; owner and worker eligibility checked.</text>
+<text x="2097.00" y="6706.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Scope</text>
+<text x="2195.00" y="6706.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Start the next bounded implementation attempt.</text>
+<text x="2097.00" y="6754.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Tools</text>
+<text x="2195.00" y="6754.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Ticket ID + operational notes only; worker reads QA itself.</text>
+<text x="2097.00" y="6802.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#D87713">Pass</text>
+<text x="2195.00" y="6802.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">New fix evidence, then fresh independent behavior review.</text>
+<rect x="3780" y="6540" width="1280" height="330" rx="20" fill="#FFF0F1" stroke="#B34265" stroke-width="2"/>
+<rect x="3802" y="6563" width="51" height="43" rx="10" fill="#B34265" stroke="#B34265" stroke-width="1"/>
+<text x="3812.89" y="6574.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">17</text>
+<text x="3868.00" y="6564.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Ask for details or a decision</text>
+<rect x="3806" y="6618" width="365.09375" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="3820.00" y="6624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#B34265">QA / product / platform owner</text>
+<text x="4968.91" y="6624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#B34265">HOLD</text>
+<text x="3807.00" y="6658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Ready</text>
+<text x="3905.00" y="6658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Report incomplete, tested build stale, or new scope / owner needed.</text>
+<text x="3807.00" y="6706.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Scope</text>
+<text x="3905.00" y="6706.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Resolve only the missing evidence or named decision.</text>
+<text x="3807.00" y="6754.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Tools</text>
+<text x="3905.00" y="6754.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Screenshots + written repro; correct-build retest; scope clarification.</text>
+<text x="3807.00" y="6802.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#B34265">Pass</text>
+<text x="3905.00" y="6802.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Updated report → step 15. Do not launch coding while the report is insufficient.</text>
+<circle cx="95" cy="6330" r="25" fill="#FFFFFF" stroke="#B34265" stroke-width="3"/>
+<text x="84.80" y="6317.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">Q</text>
+<polygon points="1740,6645.0 1815.0,6710 1740,6775.0 1665.0,6710" fill="#192B3B" stroke="#192B3B" stroke-width="2"/>
+<text x="1701.77" y="6685.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Report</text>
+<text x="1706.91" y="6710.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">valid?</text>
+<rect x="1900.125" y="6654" width="69.75" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1912.12" y="6660.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#287743">Yes</text>
+<circle cx="3420" cy="6710" r="25" fill="#FFFFFF" stroke="#B34265" stroke-width="3"/>
+<text x="3410.76" y="6697.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">R</text>
+<rect x="3467.0625" y="6754" width="85.875" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="3479.06" y="6760.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">→ 03</text>
+<rect x="3657.0859375" y="7094" width="525.828125" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="3669.09" y="7100.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">Incomplete → human supplies details</text>
+<polyline points="1060,842 1146.0,842.0 1149.8333333333333,842.1666666666666 1153.3333333333335,842.6666666666667 1156.5,843.5 1159.3333333333335,844.6666666666667 1161.833333333333,846.1666666666665 1164.0,848.0 1165.8333333333333,850.1666666666667 1167.3333333333335,852.6666666666667 1168.5,855.5 1169.3333333333335,858.6666666666666 1169.8333333333333,862.1666666666666 1170.0,866.0 1170.0,1021.0 1170.1666666666665,1024.833333333333 1170.6666666666667,1028.3333333333335 1171.5,1031.5 1172.6666666666667,1034.3333333333335 1174.1666666666665,1036.8333333333333 1176.0,1039.0 1178.1666666666667,1040.8333333333333 1180.6666666666665,1042.3333333333333 1183.5,1043.5 1186.6666666666667,1044.3333333333335 1190.1666666666665,1044.8333333333333 1194.0,1045.0 1280,1045" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1280,1045 1265.8080812355315,1052.3884668086637 1265.8080812355315,1037.6115331913363" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="1740,1280 1740,1320" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1740,1320 1732.6115331913363,1305.8080812355315 1747.3884668086637,1305.8080812355315" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="1740,1440 1740,1470" fill="none" stroke="#287743" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1740,1470 1732.6115331913363,1455.8080812355315 1747.3884668086637,1455.8080812355315" fill="#287743" stroke="#287743" stroke-width="3"/>
+<polyline points="1675,1380 1154.0,1380.0 1150.1666666666665,1380.1666666666665 1146.6666666666667,1380.666666666667 1143.5,1381.5 1140.666666666667,1382.666666666667 1138.1666666666665,1384.1666666666665 1136.0,1386.0 1134.1666666666667,1388.1666666666667 1132.6666666666667,1390.6666666666667 1131.5,1393.5 1130.6666666666667,1396.6666666666667 1130.1666666666667,1400.1666666666665 1130.0,1404.0 1130.0,1466.0 1129.8333333333333,1469.8333333333333 1129.3333333333335,1473.3333333333335 1128.5,1476.5 1127.3333333333335,1479.3333333333335 1125.833333333333,1481.833333333333 1124.0,1484.0 1121.8333333333335,1485.8333333333333 1119.3333333333335,1487.3333333333335 1116.5,1488.5 1113.3333333333335,1489.3333333333335 1109.8333333333333,1489.8333333333333 1106.0,1490.0 1070,1490" fill="none" stroke="#B34265" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1070,1490 1084.1919187644685,1482.6115331913363 1084.1919187644685,1497.3884668086637" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<polyline points="610,1360 610,1070" fill="none" stroke="#B34265" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 9"/>
+<polygon points="610,1070 617.3884668086637,1084.1919187644685 602.6115331913363,1084.1919187644685" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<polyline points="2240,2125 2240.0,1750.0 2239.861111111111,1746.8055555555554 2239.4444444444443,1743.8888888888891 2238.75,1741.25 2237.777777777778,1738.8888888888891 2236.5277777777774,1736.8055555555552 2235.0,1735.0 2233.194444444445,1733.4722222222222 2231.1111111111113,1732.2222222222222 2228.75,1731.25 2226.1111111111113,1730.5555555555557 2223.1944444444443,1730.138888888889 2220.0,1730.0 2200,1730" fill="none" stroke="#B34265" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="2200,1730 2214.1919187644685,1722.6115331913363 2214.1919187644685,1737.3884668086637" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<polyline points="2190,1600 2336.0,1600.0 2339.833333333333,1599.833333333333 2343.3333333333335,1599.3333333333335 2346.5,1598.5 2349.3333333333335,1597.3333333333335 2351.833333333333,1595.8333333333333 2354.0,1594.0 2355.8333333333335,1591.8333333333333 2357.3333333333335,1589.3333333333335 2358.5,1586.5 2359.3333333333335,1583.3333333333335 2359.8333333333335,1579.8333333333333 2360.0,1576.0 2360.0,944.0 2360.1666666666665,940.1666666666666 2360.666666666667,936.6666666666667 2361.5,933.5 2362.666666666667,930.6666666666667 2364.166666666666,928.1666666666665 2366.0,926.0 2368.166666666667,924.1666666666667 2370.666666666667,922.6666666666667 2373.5,921.5 2376.6666666666665,920.6666666666666 2380.1666666666665,920.1666666666666 2384.0,920.0 2550,920" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="2550,920 2535.8080812355315,927.3884668086637 2535.8080812355315,912.6115331913363" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="4140,2827 3955,2827" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="3955,2827 3969.1919187644685,2819.611533191336 3969.1919187644685,2834.388466808664" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="3890,2767 3890.0,2714.0 3889.833333333333,2710.1666666666665 3889.3333333333335,2706.666666666667 3888.5,2703.5 3887.333333333334,2700.666666666667 3885.833333333333,2698.1666666666665 3884.0,2696.0 3881.8333333333335,2694.166666666667 3879.3333333333335,2692.666666666667 3876.5,2691.5 3873.3333333333335,2690.666666666667 3869.8333333333335,2690.166666666667 3866.0,2690.0 3690,2690" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="3690,2690 3704.1919187644685,2682.611533191336 3704.1919187644685,2697.388466808664" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="3890,2887 3890.0,3386.0 3889.833333333333,3389.833333333333 3889.3333333333335,3393.3333333333335 3888.5,3396.5 3887.333333333334,3399.3333333333335 3885.833333333333,3401.833333333333 3884.0,3404.0 3881.8333333333335,3405.833333333333 3879.3333333333335,3407.333333333333 3876.5,3408.5 3873.3333333333335,3409.333333333333 3869.8333333333335,3409.833333333333 3866.0,3410.0 3710,3410" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="3710,3410 3724.1919187644685,3402.611533191336 3724.1919187644685,3417.388466808664" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="2690,2690 1964.0,2690.0 1960.1666666666665,2690.1666666666665 1956.666666666667,2690.666666666667 1953.5,2691.5 1950.666666666667,2692.666666666667 1948.1666666666665,2694.166666666666 1946.0,2696.0 1944.166666666667,2698.166666666667 1942.6666666666667,2700.666666666667 1941.5,2703.5 1940.6666666666667,2706.6666666666665 1940.1666666666665,2710.1666666666665 1940.0,2714.0 1940.0,3061.0 1939.8333333333333,3064.833333333333 1939.3333333333335,3068.3333333333335 1938.5,3071.5 1937.3333333333337,3074.333333333334 1935.833333333333,3076.8333333333326 1934.0,3079.0 1931.8333333333335,3080.833333333333 1929.3333333333335,3082.333333333334 1926.5,3083.5 1923.3333333333335,3084.3333333333335 1919.8333333333333,3084.8333333333335 1916.0,3085.0 1830,3085" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1830,3085 1844.1919187644685,3077.611533191336 1844.1919187644685,3092.388466808664" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="2090,3440 1964.0,3440.0 1960.1666666666665,3439.833333333333 1956.666666666667,3439.3333333333335 1953.5,3438.5 1950.666666666667,3437.333333333334 1948.1666666666665,3435.833333333333 1946.0,3434.0 1944.166666666667,3431.8333333333335 1942.6666666666667,3429.3333333333335 1941.5,3426.5 1940.6666666666667,3423.3333333333335 1940.1666666666665,3419.8333333333335 1940.0,3416.0 1940.0,3109.0 1939.8333333333333,3105.1666666666665 1939.3333333333335,3101.6666666666665 1938.5,3098.5 1937.3333333333337,3095.6666666666674 1935.833333333333,3093.1666666666665 1934.0,3091.0 1931.8333333333335,3089.166666666667 1929.3333333333335,3087.666666666667 1926.5,3086.5 1923.3333333333335,3085.666666666667 1919.8333333333333,3085.166666666667 1916.0,3085.0 1830,3085" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1830,3085 1844.1919187644685,3077.611533191336 1844.1919187644685,3092.388466808664" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="3700,3630 3866.0,3630.0 3869.833333333333,3630.166666666666 3873.333333333334,3630.666666666667 3876.5,3631.5 3879.3333333333335,3632.666666666667 3881.8333333333326,3634.166666666666 3884.0,3636.0 3885.833333333333,3638.166666666667 3887.333333333333,3640.666666666667 3888.5,3643.5 3889.3333333333335,3646.666666666667 3889.833333333333,3650.1666666666665 3890.0,3654.0 3890,3740" fill="none" stroke="#B34265" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="3890,3740 3882.611533191336,3725.8080812355315 3897.388466808664,3725.8080812355315" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<polyline points="780,3190 84.0,3190.0 80.16666666666667,3190.166666666666 76.66666666666669,3190.666666666667 73.5,3191.5 70.66666666666669,3192.666666666667 68.16666666666666,3194.1666666666665 66.0,3196.0 64.16666666666667,3198.166666666667 62.666666666666664,3200.666666666667 61.5,3203.5 60.66666666666667,3206.666666666667 60.166666666666664,3210.1666666666665 60.0,3214.0 60.0,3876.0 60.16666666666666,3879.8333333333326 60.66666666666668,3883.333333333334 61.5,3886.5 62.66666666666667,3889.333333333334 64.16666666666666,3891.8333333333326 66.0,3894.0 68.16666666666667,3895.8333333333335 70.66666666666666,3897.333333333333 73.5,3898.5 76.66666666666667,3899.333333333333 80.16666666666667,3899.8333333333335 84.0,3900.0 150,3900" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="150,3900 135.80808123553146,3907.388466808664 135.80808123553146,3892.611533191336" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="1650,3320 1650,3380" fill="none" stroke="#B34265" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1650,3380 1642.6115331913363,3365.8080812355315 1657.3884668086637,3365.8080812355315" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<polyline points="4590,4770 4590,5170" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="4590,5170 4582.611533191336,5155.808081235531 4597.388466808664,5155.808081235531" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="4140,5397 4004.0,5397.0 4000.166666666666,5397.166666666666 3996.6666666666674,5397.666666666667 3993.5,5398.5 3990.666666666667,5399.666666666667 3988.1666666666656,5401.166666666666 3986.0,5403.0 3984.166666666667,5405.166666666667 3982.6666666666665,5407.666666666667 3981.5,5410.5 3980.666666666667,5413.666666666667 3980.1666666666665,5417.166666666667 3980.0,5421.0 3980.0,5733.0 3979.833333333333,5736.833333333333 3979.3333333333335,5740.333333333334 3978.5,5743.5 3977.333333333334,5746.333333333335 3975.833333333333,5748.833333333333 3974.0,5751.0 3971.8333333333335,5752.833333333333 3969.3333333333335,5754.333333333334 3966.5,5755.5 3963.3333333333335,5756.333333333334 3959.8333333333335,5756.833333333333 3956.0,5757.0 3770,5757" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="3770,5757 3784.1919187644685,5749.611533191336 3784.1919187644685,5764.388466808664" fill="#465664" stroke="#465664" stroke-width="3"/>
+<rect x="1560" y="5540" width="1000" height="466" rx="20" fill="#E8F2FF" stroke="#2369B0" stroke-width="2"/>
+<rect x="1582" y="5563" width="51" height="43" rx="10" fill="#2369B0" stroke="#2369B0" stroke-width="1"/>
+<text x="1592.89" y="5574.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">13</text>
+<text x="1648.00" y="5564.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Decide production release</text>
+<rect x="1586" y="5618" width="252.495" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="1600.00" y="5624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">WFJev + WFRelease</text>
+<text x="2298.83" y="5624.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#2369B0">READY FOR RELEASE</text>
+<text x="1587.00" y="5658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Ready</text>
+<text x="1685.00" y="5658.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">WFRelease refreshed evidence in 12; QA Staging passed</text>
+<text x="1685.00" y="5692.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">on the exact artifact.</text>
+<text x="1587.00" y="5740.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Scope</text>
+<text x="1685.00" y="5740.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Stricter Jev completion for production release: no</text>
+<text x="1685.00" y="5774.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">risk class, incident, freeze or batch blocker.</text>
+<text x="1587.00" y="5822.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Tools</text>
+<text x="1685.00" y="5822.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Fresh gates, rollout and recovery plan, batch,</text>
+<text x="1685.00" y="5856.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">freeze, approvals and the production grant.</text>
+<text x="1587.00" y="5904.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#2369B0">Pass</text>
+<text x="1685.00" y="5904.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">All gates and the grant → 14. Otherwise → human</text>
+<text x="1685.00" y="5938.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">release owner; back through WFRelease 12, then 13.</text>
+<polygon points="1405,5697.0 1470.0,5757 1405,5817.0 1340.0,5757" fill="#192B3B" stroke="#192B3B" stroke-width="2"/>
+<text x="1366.49" y="5732.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Release</text>
+<text x="1382.12" y="5757.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">now?</text>
+<polyline points="2710,5757 2570,5757" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="2570,5757 2584.191918764468,5749.611533191336 2584.191918764468,5764.388466808664" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="1560,5757 1470,5757" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1470,5757 1484.191918764468,5749.611533191336 1484.191918764468,5764.388466808664" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="1340,5757 1260,5757" fill="none" stroke="#287743" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1260,5757 1274.191918764468,5749.611533191336 1274.191918764468,5764.388466808664" fill="#287743" stroke="#287743" stroke-width="3"/>
+<polyline points="1405,5817 1405.0,6216.0 1405.166667,6219.833333 1405.666667,6223.333333 1406.500000,6226.500000 1407.666667,6229.333333 1409.166667,6231.833333 1411.000000,6234.000000 1413.166667,6235.833333 1415.666667,6237.333333 1418.500000,6238.500000 1421.666667,6239.333333 1425.166667,6239.833333 1429.0,6240.0 1490,6240" fill="none" stroke="#B34265" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1490,6240 1475.808081235532,6247.388466808664 1475.808081235532,6232.611533191336" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<rect x="1265" y="5710" width="69.75" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1277.00" y="5716.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#287743">Yes</text>
+<rect x="1045" y="6190" width="348.4765625" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1057.00" y="6196.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">Human decision needed</text>
+<polyline points="1180,3950 1276.0,3950.0 1279.833333,3950.166667 1283.333333,3950.666667 1286.500000,3951.500000 1289.333333,3952.666667 1291.833333,3954.166667 1294.000000,3956.000000 1295.833333,3958.166667 1297.333333,3960.666667 1298.500000,3963.500000 1299.333333,3966.666667 1299.833333,3970.166667 1300.0,3974.0 1300.0,4533.0 1300.166667,4536.833333 1300.666667,4540.333333 1301.500000,4543.500000 1302.666667,4546.333333 1304.166667,4548.833333 1306.000000,4551.000000 1308.166667,4552.833333 1310.666667,4554.333333 1313.500000,4555.500000 1316.666667,4556.333333 1320.166667,4556.833333 1324.0,4557.0 1430,4557" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1430,4557 1415.808081235532,4564.388466808664 1415.808081235532,4549.611533191336" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="2440,4557 2535,4557" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="2535,4557 2520.808081235532,4564.388466808664 2520.808081235532,4549.611533191336" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="2665,4557 2736.0,4557.0 2739.833333,4556.833333 2743.333333,4556.333333 2746.500000,4555.500000 2749.333333,4554.333333 2751.833333,4552.833333 2754.000000,4551.000000 2755.833333,4548.833333 2757.333333,4546.333333 2758.500000,4543.500000 2759.333333,4540.333333 2759.833333,4536.833333 2760.0,4533.0 2760.0,4124.0 2760.166667,4120.166667 2760.666667,4116.666667 2761.500000,4113.500000 2762.666667,4110.666667 2764.166667,4108.166667 2766.000000,4106.000000 2768.166667,4104.166667 2770.666667,4102.666667 2773.500000,4101.500000 2776.666667,4100.666667 2780.166667,4100.166667 2784.0,4100.0 4566.0,4100.0 4569.833333,4100.166667 4573.333333,4100.666667 4576.500000,4101.500000 4579.333333,4102.666667 4581.833333,4104.166667 4584.000000,4106.000000 4585.833333,4108.166667 4587.333333,4110.666667 4588.500000,4113.500000 4589.333333,4116.666667 4589.833333,4120.166667 4590.0,4124.0 4590,4300" fill="none" stroke="#287743" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="4590,4300 4582.611533191336,4285.808081235531 4597.388466808664,4285.808081235531" fill="#287743" stroke="#287743" stroke-width="3"/>
+<polyline points="2600,4617 2600.0,4911.0 2599.833333,4914.833333 2599.333333,4918.333333 2598.500000,4921.500000 2597.333333,4924.333333 2595.833333,4926.833333 2594.000000,4929.000000 2591.833333,4930.833333 2589.333333,4932.333333 2586.500000,4933.500000 2583.333333,4934.333333 2579.833333,4934.833333 2576.0,4935.0 694.0,4935.0 690.166667,4934.833333 686.666667,4934.333333 683.500000,4933.500000 680.666667,4932.333333 678.166667,4930.833333 676.000000,4929.000000 674.166667,4926.833333 672.666667,4924.333333 671.500000,4921.500000 670.666667,4918.333333 670.166667,4914.833333 670.0,4911.0 670,4146" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="670,4146 677.388466808664,4160.191918764469 662.611533191336,4160.191918764469" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="400,4146 400.0,5096.0 400.166667,5099.833333 400.666667,5103.333333 401.500000,5106.500000 402.666667,5109.333333 404.166667,5111.833333 406.000000,5114.000000 408.166667,5115.833333 410.666667,5117.333333 413.500000,5118.500000 416.666667,5119.333333 420.166667,5119.833333 424.0,5120.0 2770,5120" fill="none" stroke="#B34265" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="2770,5120 2755.808081235532,5127.388466808664 2755.808081235532,5112.611533191336" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<rect x="990" y="4314" width="300" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1002.00" y="4320.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#52616E">Refreshed evidence → 09</text>
+<rect x="2800" y="4064" width="886.2578125" height="43" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="2812.00" y="4070.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#287743">09 → 10 · automatic merge authorized; all current gates pass</text>
+<rect x="1200" y="4894" width="155.7578125" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="1212.00" y="4900.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#52616E">Wait → 08</text>
+<rect x="420" y="5060" width="348.4765625" height="42" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="432.00" y="5066.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#B34265">Human decision needed</text>
+<polygon points="2600,4497.0 2665.0,4557 2600,4617.0 2535.0,4557" fill="#192B3B" stroke="#192B3B" stroke-width="2"/>
+<text x="2573.49" y="4532.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Auto</text>
+<text x="2558.12" y="4557.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">merge?</text>
+<polyline points="4910,5625 4910,5700" fill="none" stroke="#B34265" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="4910,5700 4902.611533191336,5685.808081235531 4917.388466808664,5685.808081235531" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<polyline points="95,6355 95.0,6702.5 95.12152777777777,6705.295138888888 95.48611111111111,6707.8472222222235 96.09375,6710.15625 96.94444444444446,6712.2222222222235 98.03819444444443,6714.045138888888 99.375,6715.625 100.95486111111111,6716.961805555556 102.77777777777779,6718.055555555557 104.84375,6718.90625 107.15277777777779,6719.513888888889 109.7048611111111,6719.878472222223 112.5,6720.0 130,6720" fill="none" stroke="#B34265" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="130,6720 115.80808123553146,6727.388466808664 115.80808123553146,6712.611533191336" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<polyline points="1400,6710 1655,6710" fill="none" stroke="#465664" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="1655,6710 1640.8080812355315,6717.388466808664 1640.8080812355315,6702.611533191336" fill="#465664" stroke="#465664" stroke-width="3"/>
+<polyline points="1815,6710 2060,6710" fill="none" stroke="#287743" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="2060,6710 2045.8080812355315,6717.388466808664 2045.8080812355315,6702.611533191336" fill="#287743" stroke="#287743" stroke-width="3"/>
+<polyline points="3260,6710 3390,6710" fill="none" stroke="#B34265" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="3390,6710 3375.8080812355315,6717.388466808664 3375.8080812355315,6702.611533191336" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<polyline points="1740,6775 1740.0,7056.0 1740.1666666666665,7059.833333333333 1740.666666666667,7063.333333333335 1741.5,7066.5 1742.666666666667,7069.333333333335 1744.1666666666665,7071.833333333332 1746.0,7074.0 1748.1666666666665,7075.833333333333 1750.6666666666667,7077.333333333334 1753.5,7078.5 1756.6666666666667,7079.333333333333 1760.1666666666665,7079.833333333333 1764.0,7080.0 4396.0,7080.0 4399.833333333333,7079.833333333332 4403.333333333334,7079.333333333334 4406.5,7078.5 4409.333333333334,7077.333333333334 4411.833333333333,7075.833333333332 4414.0,7074.0 4415.833333333333,7071.833333333334 4417.333333333334,7069.333333333334 4418.5,7066.5 4419.333333333334,7063.333333333334 4419.833333333333,7059.833333333333 4420.0,7056.0 4420,6880" fill="none" stroke="#B34265" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="4420,6880 4427.388466808664,6894.191918764469 4412.611533191336,6894.191918764469" fill="#B34265" stroke="#B34265" stroke-width="3"/>
+<text x="100.00" y="7130.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" fill="#52616E">Sources: WFTasks reads the tracker; workers read the tracker + linked designs • image attachments only • stop on missing access • no self-review • only WFJev invokes Jev.</text>
+<polyline points="100,7170 5120,7170" fill="none" stroke="#D4DAD9" stroke-width="2" stroke-linejoin="round"/>
+<text x="100.00" y="7205.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#192B3B">WHAT: ticket AC / human owner • HOW: Verification Plan / planner • PROOF: independent review of code AND test strength.</text>
+<rect x="2560" y="750" width="1610" height="466" rx="20" fill="#F0F7CE" stroke="#6B8110" stroke-width="2"/>
+<rect x="2582" y="773" width="51" height="43" rx="10" fill="#6B8110" stroke="#6B8110" stroke-width="1"/>
+<text x="2592.89" y="784.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">04</text>
+<text x="2648.00" y="774.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#192B3B">Agent implementation session</text>
+<rect x="2586" y="828" width="435.2925" height="34" rx="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+<text x="2600" y="834" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#6B8110">WFCoder · coding agent in Superset</text>
+<text x="3990" y="834" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#6B8110">IN PROGRESS</text>
+<text x="2587" y="868" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Ready</text>
+<text x="2685" y="868" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Current ticket AC and repository instructions are loaded by the worker.</text>
+<text x="2587" y="916" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Scope</text>
+<text x="2685" y="916" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Plan HOW to prove existing AC; implement code and meaningful tests.</text>
+<text x="2685" y="950" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Run checks, follow CI and fix code/test failures within this same session.</text>
+<text x="2685" y="984" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Never create, expand or improve AC. Independent review stays external.</text>
+<text x="2587" y="1032" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Tools</text>
+<text x="2685" y="1032" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Repository-configured agent workflow, local checks and CI.</text>
+<text x="2685" y="1066" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Grok status hooks report activity, blockers and completion candidates.</text>
+<text x="2587" y="1114" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#6B8110">Pass</text>
+<text x="2685" y="1114" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">Completion candidate → controller reconciles session, PR head and evidence → 05.</text>
+<text x="2685" y="1148" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="400" fill="#192B3B">A Stop / SessionEnd hook alone does not prove task completion.</text>
+<text x="2560" y="1400" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="700" fill="#52616E">One session, configured per repository.</text>
+<text x="2560" y="1460" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" fill="#52616E">Activity → keep running. Blocked / stuck → inspect or wait.</text>
+<text x="2560" y="1510" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" fill="#52616E">Stop / end → reconcile once before step 05.</text>
+<text x="2560" y="1560" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" fill="#52616E">Tool and child events do not complete the parent task.</text>
+<polyline points="4170,900 4310,900" fill="none" stroke="#596E7E" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="4310,900 4295.0,908.0 4295.0,892.0" fill="#596E7E" stroke="#596E7E" stroke-width="3"/>
+<rect x="4177" y="846" width="125" height="41" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="4189.00" y="852.00" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#596E7E">Checks</text>
+<polyline points="4310,1000 4170,1000" fill="none" stroke="#596E7E" stroke-width="5" stroke-linejoin="round"/>
+<polygon points="4170,1000 4185.0,992.0 4185.0,1008.0" fill="#596E7E" stroke="#596E7E" stroke-width="3"/>
+<polyline points="3900,1216 3900,2350 5160,2350 5160,2800 5050,2800" fill="none" stroke="#287743" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="5050,2800 5065.0,2808.0 5065.0,2792.0" fill="#287743" stroke="#287743" stroke-width="3"/>
+<rect x="4461.8125" y="2304" width="516.375" height="43" rx="8" fill="#FAFAF7" stroke="#FAFAF7" stroke-width="1"/>
+<text x="4473.8125" y="2310" dominant-baseline="text-before-edge" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#287743">Completion candidate → 05</text>
+</svg>

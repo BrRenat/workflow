@@ -1,0 +1,174 @@
+{
+  "version": "01-02-05-09-13-pilot-5",
+  "scope": [
+    "01",
+    "02",
+    "05",
+    "09",
+    "13"
+  ],
+  "presets": {
+    "step-02": {
+      "question_ids": [
+        "task_kind",
+        "expected_behavior_clear",
+        "acceptance_verifiable",
+        "acceptance_unambiguous",
+        "acceptance_consistent",
+        "implementation_context_sufficient",
+        "actual_behavior_specific",
+        "repro_actionable",
+        "scope_conflict",
+        "product_decision_needed",
+        "security_boundary_change",
+        "destructive_data_change",
+        "public_contract_change",
+        "money_logic_change",
+        "rollout_coordination_needed",
+        "task_complexity",
+        "frontend_work_required",
+        "backend_work_required",
+        "mobile_work_required",
+        "devops_work_required",
+        "data_work_required",
+        "platform_configuration_required",
+        "content_operations_required",
+        "shared_contract_work_required",
+        "ownership_evidence_sufficient",
+        "human_decision_required",
+        "model_choice"
+      ],
+      "export_file": "step-02.json"
+    },
+    "readiness": {
+      "question_ids": [
+        "task_kind",
+        "expected_behavior_clear",
+        "acceptance_verifiable",
+        "acceptance_unambiguous",
+        "acceptance_consistent",
+        "implementation_context_sufficient",
+        "actual_behavior_specific",
+        "repro_actionable",
+        "scope_conflict",
+        "product_decision_needed",
+        "security_boundary_change",
+        "destructive_data_change",
+        "public_contract_change",
+        "money_logic_change",
+        "rollout_coordination_needed",
+        "task_complexity",
+        "frontend_work_required",
+        "backend_work_required",
+        "mobile_work_required",
+        "devops_work_required",
+        "data_work_required",
+        "platform_configuration_required",
+        "content_operations_required",
+        "shared_contract_work_required",
+        "ownership_evidence_sufficient",
+        "human_decision_required"
+      ],
+      "export_file": "step-02-readiness.json"
+    },
+    "human-attention": {
+      "question_ids": [
+        "expected_behavior_clear",
+        "acceptance_unambiguous",
+        "acceptance_verifiable",
+        "acceptance_consistent",
+        "implementation_context_sufficient",
+        "scope_conflict",
+        "product_decision_needed",
+        "human_decision_required",
+        "security_boundary_change",
+        "destructive_data_change",
+        "public_contract_change",
+        "money_logic_change",
+        "rollout_coordination_needed",
+        "ownership_evidence_sufficient"
+      ],
+      "export_file": "step-02-human-attention.json"
+    },
+    "model-selection": {
+      "question_ids": [
+        "model_choice"
+      ],
+      "export_file": "step-02-model-selection.json"
+    },
+    "work-areas": {
+      "question_ids": [
+        "frontend_work_required",
+        "backend_work_required",
+        "mobile_work_required",
+        "devops_work_required",
+        "data_work_required",
+        "platform_configuration_required",
+        "content_operations_required",
+        "shared_contract_work_required"
+      ],
+      "export_file": "step-02-work-areas.json"
+    },
+    "step-05": {
+      "question_ids": [
+        "review_context_sufficient",
+        "business_logic_changed",
+        "behavior_verification_needed",
+        "cross_component_verification_needed",
+        "static_review_sufficient",
+        "product_decision_unresolved",
+        "specialist_decision_unresolved",
+        "human_verification_required"
+      ],
+      "export_file": "step-05.json",
+      "export_aliases": [
+        "review-routing.json"
+      ]
+    },
+    "review-depth": {
+      "question_ids": [
+        "review_context_sufficient",
+        "business_logic_changed",
+        "behavior_verification_needed",
+        "cross_component_verification_needed",
+        "static_review_sufficient"
+      ],
+      "export_file": "step-05-review-depth.json"
+    },
+    "review-human-attention": {
+      "question_ids": [
+        "product_decision_unresolved",
+        "specialist_decision_unresolved",
+        "human_verification_required"
+      ],
+      "export_file": "step-05-human-attention.json"
+    },
+    "step-09": {
+      "question_ids": [
+        "acceptance_evidence_sufficient",
+        "scope_expanded",
+        "manual_check_outstanding",
+        "delivery_coordination_needed",
+        "merge_blocker_present",
+        "human_release_decision_required"
+      ],
+      "export_file": "step-09.json"
+    },
+    "step-13": {
+      "question_ids": [
+        "acceptance_evidence_sufficient",
+        "production_evidence_current",
+        "scope_expanded",
+        "production_manual_check_outstanding",
+        "production_coordination_needed",
+        "production_blocker_present",
+        "rollout_plan_complete",
+        "release_batch_clean",
+        "incident_or_freeze_active",
+        "risk_class_requires_human",
+        "human_production_decision_required"
+      ],
+      "export_file": "step-13.json"
+    }
+  }
+}
